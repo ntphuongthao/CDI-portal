@@ -54,6 +54,12 @@ function App() {
     }
   }
 
+  const handleClear = (e) => {
+    e.preventDefault();
+    setSearchInput("");
+    setFilteredData(data);
+  }
+
   return (
     <>
       <nav className='flex' style={{justifyContent: "space-between"}}>
@@ -79,7 +85,7 @@ function App() {
               fontFamily: "'Raleway', sans-serif"
             }}
           />
-          <button type="submit">Search</button>
+          <button type="submit" onClick={handleClear}>Clear</button>
         </form>}
         <ul className='flex nav-links'>
           {session &&
