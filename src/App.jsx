@@ -10,13 +10,14 @@ import SignIn from './pages/SignIn';
 import DePauw from './pages/DePauw';
 import CustomCalendar from './components/CustomCalendar';
 import CreateEvent from './pages/CreateEvent';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 function App() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [session, setSession] = useState(null);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("");
   
   useEffect(() => {
     const fetchData = async () => {
@@ -47,14 +48,31 @@ function App() {
 
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut();
+    if (error) {
+      alert(error.message);
+      return;
+    }
+  }
+
+  const handleSelectOption = (e) => {
+    setSelectedOption(e.target.value);
+    window.location = e.target.value;
   }
 
   return (
     <>
       <nav className='flex' style={{justifyContent: "space-between"}}>
-        <Link to='/'>
-          <img src="depauw-logo.jpeg" alt="depauw logo" width="60px" height="50px" className='depauw-logo'/>
-        </Link>
+        <div className='flex' style={{color: "#e1ad01"}}>
+          <Link to='/'>
+            <img src="depauw-logo.jpeg" alt="depauw logo" width="60px" height="50px" className='depauw-logo'/>
+          </Link>
+          {session && (
+            <>
+              <li><Link to='/'>Home</Link></li> | 
+              <li><Link to='/calendar'>Ongoing events</Link></li> 
+            </>
+          )}
+        </div>
         {session && <form className='flex search-bar'>
           <input
             type="text"
@@ -70,16 +88,14 @@ function App() {
         <ul className='flex nav-links'>
           {session &&
             (<>
-              <li><Link to='/'>Home</Link></li> | 
-              <li><Link to='/calendar'>Ongoing events</Link></li> | 
               <li>
-                <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
-                  <option value="">Create</option>
-                  <option value="new-post"><Link to='/new-post'>Create a new Post</Link></option>
-                  <option value="new-event"><Link to='/new-event'>Create a new Event</Link></option>
+                <select className='select-create' value={selectedOption} onChange={handleSelectOption}>
+                  <option value="">New</option>
+                  <option value="new-post">New Post</option>
+                  <option value="new-event">New Event</option>
                 </select>
               </li> | 
-              <li><button onClick={handleSignOut}>Sign Out</button></li> 
+              <li className='sign-out' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
           }
           {!session &&
