@@ -1,0 +1,7 @@
+.errorBanner {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}

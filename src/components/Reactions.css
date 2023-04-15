@@ -1,0 +1,10 @@
+.likeBtn:hover {
+  background-color: aquamarine;
+  color: black;
+  transition: all 0.2s ease-in;
+}
+
+.dislikeBtn:hover {
+  background-color: brown;
+  transition: all 0.2s ease-in;
+}

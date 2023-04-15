@@ -1,0 +1,28 @@
+.edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 500px;
+}
+
+form input {
+  color: black;
+}
+
+.deleteBtn {
+  background-color: #d21404;
+  color: white;
+  margin: 10px;
+}
+
+.cancelBtn {
+  background-color: #e1ad01;
+}
+
+.cancelBtn:hover {
+  border-color: white;
+}

@@ -1,0 +1,49 @@
+import { useState } from "react";
+import { supabase } from "../supabaseClient";
+import './SignIn.css';
+
+const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  async function signInWithEmail(event) {
+    event.preventDefault();
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    })
+    if (error) {
+      setError(error.message);
+      return;
+    }
+
+    if (data) {
+      window.location = "/";
+    }
+  }
+
+  return (
+    <div className="container">
+      <form onSubmit={signInWithEmail}>
+        {error && 
+          (<div className="errorBanner">
+            {error}
+          </div>)
+        }
+        <label htmlFor="email">Email</label>
+        <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
+
+        <label htmlFor="password">Password</label>
+        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} /><br/>
+
+        <div className="flex">
+          <button className="signUpBtn" type="submit">Sign In</button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default SignIn;

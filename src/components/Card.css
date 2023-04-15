@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid white;
+  width: 1000px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f4c430;
+}
+
+.content-box {
+  width: 98%;
+  border: 2px solid white;
+  align-items: center;
+  min-height: 150px;
+  height: auto;
+  background-color: white;
+  color: black;
+}
+
+.content-box p {
+  padding-left: 1rem;
+}
+
+.content-img {
+  margin: 10px;
+}
