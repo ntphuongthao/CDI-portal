@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 const DePauw = () => {
   return (
     <div className="container">
-      <h1>Welcome to DePauwHub!</h1>
-      <p>This is we you can freely share your thoughts and opinions!</p>
+      <h1>Welcome to Center of Diversity and Inclusion Portal!</h1>
+      <p>Feel free to share your 
+        ideas and viewpoints here! We appreciate any input as it helps to enhance the diversity of DePauw.</p>
       <br />
       <p>If you don't have an account yet? <Link to='/sign-up'>Sign Up</Link></p>
       <p>Otherwise, you can just <Link to='/sign-in'>Sign In</Link></p>

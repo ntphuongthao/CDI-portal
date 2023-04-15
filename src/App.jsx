@@ -11,6 +11,7 @@ import DePauw from './pages/DePauw';
 import CustomCalendar from './components/CustomCalendar';
 import CreateEvent from './pages/CreateEvent';
 import { FaSignOutAlt } from 'react-icons/fa';
+import Games from './components/Games';
 
 function App() {
   const [data, setData] = useState([]);
@@ -69,7 +70,8 @@ function App() {
           {session && (
             <>
               <li><Link to='/'>Home</Link></li> | 
-              <li><Link to='/calendar'>Ongoing events</Link></li> 
+              <li><Link to='/calendar'>Ongoing events</Link></li> | 
+              <li><Link to='/games'>Games</Link></li> 
             </>
           )}
         </div>
@@ -117,6 +119,7 @@ function App() {
             <Route path='/new-event' element={<CreateEvent />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
             <Route path='/calendar' element={<CustomCalendar />} />
+            <Route path='/games' element={<Games />} />
           </Routes>
         </>
       ) : (
