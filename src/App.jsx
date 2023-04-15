@@ -18,7 +18,6 @@ function App() {
   const [filteredData, setFilteredData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [session, setSession] = useState(null);
-  const [selectedOption, setSelectedOption] = useState("");
   
   useEffect(() => {
     const fetchData = async () => {
@@ -55,11 +54,6 @@ function App() {
     }
   }
 
-  const handleSelectOption = (e) => {
-    setSelectedOption(e.target.value);
-    window.location = e.target.value;
-  }
-
   return (
     <>
       <nav className='flex' style={{justifyContent: "space-between"}}>
@@ -90,13 +84,13 @@ function App() {
         <ul className='flex nav-links'>
           {session &&
             (<>
-              <li>
-                <select className='select-create' value={selectedOption} onChange={handleSelectOption}>
-                  <option value="">New</option>
-                  <option value="new-post">New Post</option>
-                  <option value="new-event">New Event</option>
-                </select>
-              </li> | 
+              <li className="dropdown">
+                <a href="#">Create <span className="arrow"></span></a>
+                <ul>
+                  <li><Link to="/new-post">New Post</Link></li>
+                  <li><Link to="/new-event">New Event</Link></li>
+                </ul>
+              </li> |
               <li className='sign-out' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
           }

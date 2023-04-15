@@ -22,6 +22,19 @@ nav {
   padding: 0;
 }
 
+.arrow {
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.15em solid currentColor;
+  border-bottom: 0.15em solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: 0.38em;
+  margin-top: -0.25em;
+}
+
+
 .depauw-logo {
   margin: 10px 0 0 1rem;
 }
@@ -29,6 +42,31 @@ nav {
 .search-bar {
   width: 400px;
 }
+
+nav li.dropdown {
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  text-align: right;
+}
+
+nav li.dropdown ul {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+nav li.dropdown ul li a {
+  display: block;
+  background-color: #f8f8f8;
+  padding: 8px;
+  border-bottom: 2px solid black;
+}
+
+nav li.dropdown:hover ul {
+  display: block;
+}
+
 
 input[type="text"], input[type="password"] {
   padding: 10px;
