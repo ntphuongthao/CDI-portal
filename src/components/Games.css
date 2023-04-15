@@ -5,3 +5,17 @@
 .vocab-select {
   margin: 1rem;
 }
+
+.games-introduction {
+  width: 50%;
+  border-right: 2px solid #e1ad01;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.games-container {
+  width: 50%;
+  background-color: white;
+  height: 500px;
+  margin: 0 1.5rem 36px 1.5rem;
+}

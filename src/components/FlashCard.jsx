@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { vietnameseWords, chineseWords, japaneseWords, bangladeshWords, koreanWords } from "../vocabulary";
 import VocabWord from "./VocabWord";
+import './FlashCard.css';
 
 const Flashcard = ({ language }) => {
   const [data, setData] = useState(null);
@@ -54,7 +55,7 @@ const Flashcard = ({ language }) => {
   }
 
   return (
-    <div>
+    <div className="flashcard-container">
       <h3>Check whether you are familiar with these commonly used {languageFormatted} words.</h3>
       {card && <div className="container">
         <VocabWord
@@ -67,7 +68,7 @@ const Flashcard = ({ language }) => {
       <div className="button-container flex">
         <button type="next" className='nextCard' onClick={handlePrev}>⭠</button>
         <button type="next" className='nextCard' onClick={handleNext}>⭢</button>
-        <button type="button" className='nextCard' onClick={shuffleCard}>Shuffle Card</button>
+        <button type="button" className="shuffleBtn" onClick={shuffleCard}>Shuffle Card</button>
       </div>
     </div>
   );

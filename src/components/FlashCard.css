@@ -1,0 +1,8 @@
+.shuffleBtn {
+  background-color: #e1ad01;
+  padding: 12px;
+}
+
+.shuffleBtn:hover {
+  border: 2px solid black;
+}
