@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import './CreateEvent.css';
 
 const CreateEvent = () => {
   const [event, setEvent] = useState({

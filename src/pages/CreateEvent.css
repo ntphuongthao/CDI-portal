@@ -1,0 +1,14 @@
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  padding: 8px;
+  font-size: 16px;
+  color: #333333;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
