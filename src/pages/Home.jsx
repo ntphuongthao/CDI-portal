@@ -34,7 +34,7 @@ const Home = (props) => {
           <button onClick={handleOrderNewest}>Newest</button>
           <button onClick={handleOrderPopular}>Most Popular</button>
         </div>
-        <p>{!sortedBy ? "Posts are currently not sorted by any order!": `Posts are currently sorted by ${sortedBy}!`}</p>
+        <p>{!sortedBy ? "Posts are currently not sorted by any order!": `Posts are currently sorted by ${sortedBy}!`}</p> 
       </div>
 
       <h1 className="title">View All Posts</h1>
