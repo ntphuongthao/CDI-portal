@@ -88,10 +88,10 @@ const TriviaCards = () => {
   
   return (
     <div className="container">
-      <button className="flex" onClick={restartTriviaGame}>
+      <button className="flex trivia-restartBtn" onClick={restartTriviaGame}>
         Restart <VscDebugRestart />
       </button>
-      <p style={{color: 'black'}}>Can you determine which two of the images shown below depict <b>{country}</b> cuisine and national flag?</p>
+      <p className="trivia-question container">Can you determine which two of the images shown below depict <b>{country}</b> cuisine and national flag?</p>
       <div className="trivia-options-container">
         {displayedOptions && (
           displayedOptions.map((option) => (
@@ -102,7 +102,6 @@ const TriviaCards = () => {
                 key={option}
                 src={option}
                 alt="Incorrect Answer"
-                width="100px"
               />
             </>
           ))

@@ -1,3 +1,17 @@
+.trivia-restartBtn {
+  background-color: #e1ad01;
+  color: black;
+}
+
+.trivia-restartBtn:hover {
+  border: 2px solid black;
+}
+
+.trivia-question {
+  color: black;
+  margin: 1rem;
+}
+
 .trivia-options-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -8,6 +22,8 @@
 .trivia-option {
   background-color: #ccc; /* optional, adds some color to items */
   padding: 20px;
+  height: 100px;
+  width: 150px;
 }
 
 .option-selected {

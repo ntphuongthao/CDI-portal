@@ -3,8 +3,9 @@
 }
 
 .flashcard-select {
-  background-color: aliceblue;
+  background-color: #e1ad01;
   margin: 1rem;
+  width: 160px;
 }
 
 .flashcard-select:hover {
@@ -21,6 +22,6 @@
 .game-container {
   width: 50%;
   background-color: white;
-  height: 500px;
+  height: 600px;
   margin: 0 1.5rem 36px 1.5rem;
 }

@@ -62,7 +62,7 @@ export default function Confetti({ correct, handleSubmit }) {
 
   return (
     <>
-      <button onClick={handleClick}>Submit your answer</button>
+      <button onClick={handleClick} style={{margin: '1rem'}}>Submit your answer</button>
       <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
     </>
   );
