@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { trivia } from "../countries";
 import './TriviaCards.css';
+import { VscDebugRestart } from 'react-icons/vsc';
 
 const TriviaCards = () => {
   const countries = trivia.map(item => Object.keys(item)[0]);
@@ -10,15 +11,14 @@ const TriviaCards = () => {
   const [foodDescription, setFoodDescription] = useState(null);
   const [flag, setFlag] = useState(null);
   const [flagUrls, setFlagUrls] = useState([]);
-  const [incorrectAnswers, setIncorrectAnser] = useState(null);
+  const [displayedOptions, setDisplayedOptions] = useState(null);
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * countries.length);
   }
 
   useEffect(() => {
-    const randomIndex = generateRandomNumber();
-    const randomCountry = countries[randomIndex];
+    const randomCountry = countries[generateRandomNumber()];
     setCountry(randomCountry);
   }, []);
 
@@ -44,17 +44,27 @@ const TriviaCards = () => {
       const incorrectFlagUrls = [...flagUrls.filter((url) => url !== flag).sort(() => Math.random() - 0.5)].slice(0, 4);
       const incorrectFoodUrls = [...foodUrls.filter((url) => url !== food).sort(() => Math.random() - 0.5)].slice(0, 3);
       const incorrectAns = incorrectFlagUrls.concat(incorrectFoodUrls);
-      setIncorrectAnser(incorrectAns);
+      let options = [...incorrectAns, flag, food];
+      options = [...options.sort(() => Math.random() - 0.5)];
+      setDisplayedOptions(options);
     }
   }, [flag, food, foodUrls, flagUrls, foodDescription]);
+
+  const restartTriviaGame = () => {
+    const randomCountry = countries[generateRandomNumber()];
+    setCountry(randomCountry);
+  }
   
   return (
     <div className="container">
-      <p style={{color: 'black'}}>Can you determine which two of the images shown below depict {country} cuisine and national flag?</p>
+      <button className="flex" onClick={restartTriviaGame}>
+        Restart <VscDebugRestart />
+      </button>
+      <p style={{color: 'black'}}>Can you determine which two of the images shown below depict <b>{country}</b> cuisine and national flag?</p>
       <div className="trivia-options-container">
-        {incorrectAnswers && (
-          incorrectAnswers.map((incorrectAns) => (
-            <img className="trivia-option" src={incorrectAns} alt="Incorrect Answer" width="120px"/>
+        {displayedOptions && (
+          displayedOptions.map((option) => (
+            <img className="trivia-option" src={option} alt="Incorrect Answer" width="100px"/>
           ))
         )}
       </div>

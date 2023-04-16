@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './Games.css';
 import Flashcard from './FlashCard';
 import TriviaCards from './TriviaCards';
-import { VscDebugRestart } from 'react-icons/vsc';
 
 const Games = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -58,9 +57,6 @@ const Games = () => {
           {!startTrivia && <button onClick={startTriviaGame}>Start</button>}
           {startTrivia && (
             <div className='container'>
-              <button className="flex" onClick={restartTriviaGame}>
-                Restart <VscDebugRestart />
-              </button>
               <TriviaCards />
             </div>
           )}
