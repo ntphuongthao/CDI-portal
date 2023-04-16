@@ -1,0 +1,37 @@
+.event-container {
+  width: 600px;
+  justify-content: space-between;
+}
+
+.event-card {
+  margin: 1rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 130px;
+  height: 130px;
+}
+
+.event-top {
+  border-bottom: 2px solid white;
+  background-color: #e1ad01;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  color: black;
+  font-weight: 800;
+}
+
+.event-weekday {
+  text-align: center;
+}
+
+.event-date {
+  text-align: center;
+  font-size: 30px;
+}
+
+.event-content {
+  width: 400px;
+}
