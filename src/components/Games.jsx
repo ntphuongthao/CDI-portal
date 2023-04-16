@@ -54,7 +54,7 @@ const Games = () => {
         </div>
 
         <div className="game-container container">
-          {!startTrivia && <button onClick={startTriviaGame}>Start</button>}
+          {!startTrivia && <button style={{backgroundColor: "#e1ad01", color: "black"}} onClick={startTriviaGame}>Start</button>}
           {startTrivia && (
             <div className='container'>
               <TriviaCards />

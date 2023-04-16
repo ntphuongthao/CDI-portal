@@ -79,6 +79,7 @@ function App() {
       alert(error.message);
       return;
     }
+    window.location = '/';
   }
 
   const handleClear = (e) => {
