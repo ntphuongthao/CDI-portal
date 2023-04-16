@@ -26,6 +26,7 @@ const SignIn = () => {
 
   return (
     <div className="container">
+      <h2>Log into your account</h2>
       <form onSubmit={signInWithEmail}>
         {error && 
           (<div className="errorBanner">
@@ -39,7 +40,7 @@ const SignIn = () => {
         <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} /><br/>
 
         <div className="flex">
-          <button className="signUpBtn" type="submit">Sign In</button>
+          <button className="signUpBtn" type="submit">Log In</button>
         </div>
       </form>
     </div>

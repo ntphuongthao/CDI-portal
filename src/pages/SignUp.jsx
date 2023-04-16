@@ -27,7 +27,7 @@ const SignUp = () => {
       {loading ? "Loading..." : (
         <>
           <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />
-          <h3>You can sign up your account here!</h3>
+          <h3>You can register your account here!</h3>
           <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email</label>
             <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
@@ -36,7 +36,7 @@ const SignUp = () => {
             <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} /><br/>
 
             <div className="flex">
-              <button className="signUpBtn" type="submit">Sign Up</button>
+              <button className="signUpBtn" type="submit">Register</button>
             </div>
           </form>
         </>

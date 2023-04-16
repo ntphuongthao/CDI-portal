@@ -89,7 +89,7 @@ function App() {
 
   return (
     <>
-      <nav className='flex' style={{justifyContent: "space-between"}}>
+      <nav className='flex' style={{justifyContent: "space-between", padding: "0"}}>
         <div className='flex' style={{color: "#e1ad01"}}>
           <Link to='/'>
             <img src="depauw-logo.jpeg" alt="depauw logo" width="60px" height="50px" className='depauw-logo'/>
@@ -131,16 +131,16 @@ function App() {
           {!session &&
             (
               <>
-                <li><Link to='/sign-up'>Sign Up</Link></li> | 
-                <li><Link to='/sign-in'>Sign In</Link></li>
+                <li><Link to='/sign-up'>Register</Link></li> | 
+                <li><Link to='/sign-in'>Log In</Link></li>
               </>
             )
           }
         </ul>
       </nav>
 
-      {session ? (
-        <>
+      {session ? 
+        (
           <Routes>
             <Route path='/' element={<Home data={filteredData} />} />
             <Route path='/new-post' element={<CreatePost />} />
@@ -149,17 +149,15 @@ function App() {
             <Route path='/calendar' element={<CustomCalendar />} />
             <Route path='/games' element={<Games />} />
             <Route path='/account' element={<Account session={session} />} />
+          </Routes>) : 
+        (
+          <Routes>
+            <Route path='/sign-up' element={<SignUp />} />
+            <Route path='/sign-in' element={<SignIn />} />
+            <Route path='/' element={<DePauw />} />
           </Routes>
-        </>
-      ) : (
-        <DePauw />
-      )}
-
-      {!session && <Routes>
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='*' element={<SignIn />}/>
-      </Routes>}
+        )
+      }
     </>
   );
 }
