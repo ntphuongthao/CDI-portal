@@ -64,8 +64,7 @@ function App() {
         setAvatarUrl(data.avatar_url);
       }
     }
-
-    getProfile();
+    if (session) getProfile();
   }, [session]);
 
   const handleSearch = useCallback((event) => {

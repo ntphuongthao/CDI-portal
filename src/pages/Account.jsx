@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
+import Avatar from './Avatar';
 import './Account.css';
 
 export default function Account({ session }) {
@@ -56,52 +57,57 @@ export default function Account({ session }) {
     }
     alert("Successfully Updated!");
     setLoading(false);
-    window.location = '/';
   }
 
   return (
-    <form onSubmit={updateProfile} className="container">
-      <div style={{display: "flex", flexDirection: "column"}}>
-        <label htmlFor="email">Email</label>
-        <input style={{width: '350px'}} id="email" type="text" value={session.user.email} disabled />
-      </div>
-
-      <div style={{display: "flex", flexDirection: "column"}}>
-        <label htmlFor="username">Name</label>
-        <input
-          style={{width: '350px'}}
-          id="username"
-          type="text"
-          required
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
+    <div className="container">
+      <h2 className='title'>Edit Your Profile!</h2>
+      <form onSubmit={updateProfile} className="container">
+        <Avatar
+          url={avatar_url}
+          size={150}
+          onUpload={(event, url) => {
+            setAvatarUrl(url);
+            updateProfile(event);
+          }}
         />
-      </div>
 
-      <div style={{display: "flex", flexDirection: "column"}}>
-        <label htmlFor="website">Website</label>
-        <input
-          style={{width: '350px'}}
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
-
-      <div className="flex">
-        <div>
-          <button className="updateBtn" type="submit" disabled={loading}>
-            {loading ? 'Loading ...' : 'Update'}
-          </button>
+        <div style={{display: "flex", flexDirection: "column"}}>
+          <label htmlFor="email">Email</label>
+          <input style={{width: '350px'}} id="email" type="text" value={session.user.email} disabled />
         </div>
 
-        <div>
-          <button className="signOutBtn" type="button" onClick={() => supabase.auth.signOut()}>
-            Sign Out
-          </button>
+        <div style={{display: "flex", flexDirection: "column"}}>
+          <label htmlFor="username">Name</label>
+          <input
+            style={{width: '350px'}}
+            id="username"
+            type="text"
+            required
+            value={username || ''}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
-      </div>
-    </form>
+
+        <div style={{display: "flex", flexDirection: "column"}}>
+          <label htmlFor="website">Website</label>
+          <input
+            style={{width: '350px'}}
+            id="website"
+            type="url"
+            value={website || ''}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </div>
+
+        <div className="flex">
+          <div>
+            <button className="updateBtn" type="submit" disabled={loading}>
+              {loading ? 'Loading ...' : 'Update'}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
