@@ -1,4 +1,4 @@
-const trivia = [
+export const trivia = [
   {
     "Vietnam": {
     id: 1,

@@ -1,12 +1,23 @@
 import { useState } from 'react';
 import './Games.css';
 import Flashcard from './FlashCard';
+import TriviaCards from './TriviaCards';
+import { VscDebugRestart } from 'react-icons/vsc';
 
 const Games = () => {
   const [selectedOption, setSelectedOption] = useState("");
+  const [startTrivia, setStartTrivia] = useState(false);
 
   const handleSelectOption = (e) => {
     setSelectedOption(e.target.value);
+  }
+
+  const startTriviaGame = () => {
+    setStartTrivia(true);
+  }
+
+  const restartTriviaGame = () => {
+
   }
 
   return (
@@ -39,12 +50,20 @@ const Games = () => {
       <div className='flex' style={{justifyContent: 'space-between'}}>
         <div className="game-introduction container">
             <h2>Trivia Game</h2>
-            <img className='game-image' src="./vocabulary-flashcard.jpeg" alt="Vocabulary Flashcard" width="600px" />
-            <p>Some description</p>
+            <img className='game-image' src="./trivia-game.jpeg" alt="Trivia Game" width="600px" />
+            <p>This fun and educational game is perfect for anyone who loves to travel or wants to expand their cultural knowledge</p>
         </div>
 
-        <div className="game-container">
-          
+        <div className="game-container container">
+          {!startTrivia && <button onClick={startTriviaGame}>Start</button>}
+          {startTrivia && (
+            <div className='container'>
+              <button className="flex" onClick={restartTriviaGame}>
+                Restart <VscDebugRestart />
+              </button>
+              <TriviaCards />
+            </div>
+          )}
         </div>
       </div>
     </>

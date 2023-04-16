@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import ToolBar from "./Toolbar";
+import ToolBar from "./ToolBar";
 import StarRating from "./StarRating";
 
 const Card = (props) => {

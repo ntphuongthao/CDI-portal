@@ -1,0 +1,11 @@
+.trivia-options-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px; /* optional, adds some space between items */
+}
+
+.trivia-option {
+  background-color: #ccc; /* optional, adds some color to items */
+  padding: 20px;
+}

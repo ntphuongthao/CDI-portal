@@ -3,7 +3,12 @@
 }
 
 .flashcard-select {
+  background-color: aliceblue;
   margin: 1rem;
+}
+
+.flashcard-select:hover {
+  border: 2px solid black;
 }
 
 .game-introduction {
