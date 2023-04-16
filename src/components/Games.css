@@ -1,19 +1,19 @@
-.vocab-image {
+.game-image {
   margin: 2rem;
 }
 
-.vocab-select {
+.flashcard-select {
   margin: 1rem;
 }
 
-.games-introduction {
+.game-introduction {
   width: 50%;
   border-right: 2px solid #e1ad01;
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.games-container {
+.game-container {
   width: 50%;
   background-color: white;
   height: 500px;
