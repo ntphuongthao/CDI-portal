@@ -12,12 +12,17 @@ import CustomCalendar from './components/CustomCalendar';
 import CreateEvent from './pages/CreateEvent';
 import { FaSignOutAlt } from 'react-icons/fa';
 import Games from './components/Games';
+import { RiAccountCircleFill } from 'react-icons/ri';
+import Account from './pages/Account';
 
 function App() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [session, setSession] = useState(null);
+  const [username, setUsername] = useState(null);
+  const [website, setWebsite] = useState(null);
+  const [avatar_url, setAvatarUrl] = useState(null);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +44,29 @@ function App() {
     
     return () => subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    async function getProfile() {
+      const { user } = session;
+
+      let { data, error } = await supabase
+        .from('profiles')
+        .select(`username, website, avatar_url`)
+        .eq('id', user.id)
+        .single();
+
+      if (error) {
+        alert("Change your profile!");
+        return;
+      } else if (data) {
+        setUsername(data.username);
+        setWebsite(data.website);
+        setAvatarUrl(data.avatar_url);
+      }
+    }
+
+    getProfile();
+  }, [session]);
 
   const handleSearch = useCallback((event) => {
     setSearchInput(event.target.value);
@@ -97,7 +125,8 @@ function App() {
                   <li><Link to="/new-event">New Event</Link></li>
                 </ul>
               </li> |
-              <li className='sign-out' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
+              <li className='nav-icon'><Link to='/account'><RiAccountCircleFill /> {username ? username: "Anonymous"}</Link></li> | 
+              <li className='nav-icon' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
           }
           {!session &&
@@ -120,6 +149,7 @@ function App() {
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
             <Route path='/calendar' element={<CustomCalendar />} />
             <Route path='/games' element={<Games />} />
+            <Route path='/account' element={<Account session={session} />} />
           </Routes>
         </>
       ) : (

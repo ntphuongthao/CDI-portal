@@ -52,4 +52,9 @@ button:hover {
   border-color: white;
 }
 
-
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
