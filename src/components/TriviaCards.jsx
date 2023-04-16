@@ -79,10 +79,8 @@ const TriviaCards = () => {
   }
 
   const handleSubmit = () => {
-    if (selectedOptions.length == 2) {
-      console.log(123);
+    if (selectedOptions.length === 2) {
       if (selectedOptions.includes(flag) && selectedOptions.includes(food)) {
-        console.log('here')
         setCorrect(true);
       }
     }
@@ -101,7 +99,7 @@ const TriviaCards = () => {
               <img
                 onClick={handleSelectOption}
                 className={`trivia-option ${selectedOptions.includes(option) ? "option-selected": ""}`}
-                key={Math.random()}
+                key={option}
                 src={option}
                 alt="Incorrect Answer"
                 width="100px"
