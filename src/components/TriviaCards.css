@@ -9,3 +9,7 @@
   background-color: #ccc; /* optional, adds some color to items */
   padding: 20px;
 }
+
+.option-selected {
+  background-color: #e1ad01;
+}

@@ -12,6 +12,7 @@ const TriviaCards = () => {
   const [flag, setFlag] = useState(null);
   const [flagUrls, setFlagUrls] = useState([]);
   const [displayedOptions, setDisplayedOptions] = useState(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * countries.length);
@@ -52,7 +53,28 @@ const TriviaCards = () => {
 
   const restartTriviaGame = () => {
     const randomCountry = countries[generateRandomNumber()];
+    setSelectedOptions([]);
     setCountry(randomCountry);
+  }
+
+  const handleSelectOption = (e) => {
+    const url = new URL(e.target.src);
+    const pathname = `.${url.pathname}`;
+
+    if (selectedOptions.includes(pathname)) {
+      const newSelectedOptions = selectedOptions.filter((option) => option !== pathname);
+      setSelectedOptions(newSelectedOptions);
+      return;
+    }
+
+    if (selectedOptions.length < 2) {
+      const newSelectedOptions = [...selectedOptions, pathname];
+      setSelectedOptions(newSelectedOptions);
+    }
+  }
+
+  const handleSubmit = () => {
+
   }
   
   return (
@@ -64,11 +86,20 @@ const TriviaCards = () => {
       <div className="trivia-options-container">
         {displayedOptions && (
           displayedOptions.map((option) => (
-            <img className="trivia-option" src={option} alt="Incorrect Answer" width="100px"/>
+            <>
+              <img
+                onClick={handleSelectOption}
+                className={`trivia-option ${selectedOptions.includes(option) ? "option-selected": ""}`}
+                key={Math.random()}
+                src={option}
+                alt="Incorrect Answer"
+                width="100px"
+              />
+            </>
           ))
         )}
       </div>
-      <button>Submit your answer</button>
+      <button onClick={handleSubmit}>Submit your answer</button>
     </div>
   );
 }
