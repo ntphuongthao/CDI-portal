@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { trivia } from "../countries";
 import './TriviaCards.css';
 import { VscDebugRestart } from 'react-icons/vsc';
+import Confetti from "./Confetti";
 
 const TriviaCards = () => {
   const countries = trivia.map(item => Object.keys(item)[0]);
@@ -13,6 +14,7 @@ const TriviaCards = () => {
   const [flagUrls, setFlagUrls] = useState([]);
   const [displayedOptions, setDisplayedOptions] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [correct, setCorrect] = useState(false);
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * countries.length);
@@ -55,6 +57,7 @@ const TriviaCards = () => {
     const randomCountry = countries[generateRandomNumber()];
     setSelectedOptions([]);
     setCountry(randomCountry);
+    setCorrect(false);
   }
 
   const handleSelectOption = (e) => {
@@ -63,18 +66,26 @@ const TriviaCards = () => {
 
     if (selectedOptions.includes(pathname)) {
       const newSelectedOptions = selectedOptions.filter((option) => option !== pathname);
+      setCorrect(false);
       setSelectedOptions(newSelectedOptions);
       return;
     }
 
     if (selectedOptions.length < 2) {
       const newSelectedOptions = [...selectedOptions, pathname];
+      setCorrect(false);
       setSelectedOptions(newSelectedOptions);
     }
   }
 
   const handleSubmit = () => {
-
+    if (selectedOptions.length == 2) {
+      console.log(123);
+      if (selectedOptions.includes(flag) && selectedOptions.includes(food)) {
+        console.log('here')
+        setCorrect(true);
+      }
+    }
   }
   
   return (
@@ -99,7 +110,7 @@ const TriviaCards = () => {
           ))
         )}
       </div>
-      <button onClick={handleSubmit}>Submit your answer</button>
+      <Confetti correct={correct} handleSubmit={handleSubmit}/>
     </div>
   );
 }
