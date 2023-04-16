@@ -19,7 +19,7 @@ const EventCard = ({ event }) => {
   return (
     <div className="flex event-container">
       <div className="event-card">
-        <div className="event-top">{month}, {year}</div>
+        <div className="event-top">{month} {year}</div>
         <div className="event-weekday">{weekday}</div>
         <div className="event-date">{date}</div>
       </div>

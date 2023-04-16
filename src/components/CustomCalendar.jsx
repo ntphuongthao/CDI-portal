@@ -40,7 +40,7 @@ const CustomCalendar = () => {
           tileClassName={tileClassName}
           onClickDay={handleClick}
         />
-        <div>
+        <div className='current-events'>
           {(displayedEvents && displayedEvents.length > 0) ?
             (<>
               <h2>Events on {date.toDateString()}</h2>
@@ -56,7 +56,7 @@ const CustomCalendar = () => {
         </div>
       </div>
       <div className="all-events-container container">
-        <h2>All Events</h2>
+        <h1>All Events</h1>
         <div>
           {events && events.map((event) => (
             <EventCard event={event}/>
