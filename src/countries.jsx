@@ -126,7 +126,7 @@ export const trivia = [
       url: "./food/canada_food.jpg",
       description: "Poutine — Crispy fries, squeaky cheese curds, and rich gravy all come together to make the ultimate comfort food — is a classic Canadian food, said to have originated in Quebec City during the 1950s. Poutine was created in Quebec City in 1950, and the French-Canadian dish has taken over Canada and is beloved by everyone ever since.",
     },
-    flag: "./flags/Flag_of_Canada.svg.png",
+    flag: "./flags/Flag_of_Canada_(Pantone).svg.png",
     }
   },
   {
@@ -136,7 +136,7 @@ export const trivia = [
       url: "./food/phil_food.jpg",
       description: "Philippine adobo is a popular Filipino dish and cooking process in Philippine cuisine that involves meat, seafood, or vegetables marinated in vinegar, soy sauce, garlic, bay leaves, and black peppercorns, which is browned in oil, and simmered in the marinade. It has occasionally been considered the unofficial national dish in the Philippines.",
     },
-    flag: "./flags/Flag_of_Philippines.svg.png",
+    flag: "./flags/Flag_of_the_Philippines.svg.png",
     }
   },
   {
@@ -146,7 +146,7 @@ export const trivia = [
       url: "./food/UAE_food.jpg",
       description: "Machboos is a traditional rice dish made with whole local spices including cardamom and cinnamon, then mixed with dried lemon. It’s usually made with locally caught shrimp, lamb or chicken.",
     },
-    flag: "./flags/Flag_of_United_Arab_Emirates.svg.png",
+    flag: "./flags/Flag_United_Arab_Emirates.svg.png",
     }
   },
   {
