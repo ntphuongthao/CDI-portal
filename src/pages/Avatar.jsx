@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import './Avatar.css';
+import { AiFillCamera } from 'react-icons/ai'; 
 
 export default function Avatar({ url, size, onUpload }) {
   const [avatarUrl, setAvatarUrl] = useState(null);
@@ -62,7 +63,9 @@ export default function Avatar({ url, size, onUpload }) {
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
-      <div className="camera-img">camera img</div>
+      <div className="camera-img">
+        <span className='camera-span'><AiFillCamera /></span>
+      </div>
       <div style={{ width: size }}>
         <label htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
