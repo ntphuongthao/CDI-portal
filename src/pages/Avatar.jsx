@@ -62,6 +62,7 @@ export default function Avatar({ url, size, onUpload }) {
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
+      <div className="camera-img">camera img</div>
       <div style={{ width: size }}>
         <label htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
