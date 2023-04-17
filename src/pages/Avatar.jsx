@@ -64,7 +64,22 @@ export default function Avatar({ url, size, onUpload }) {
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
       <div className="camera-img">
-        <span className='camera-span'><AiFillCamera /></span>
+        <span className='camera-span'>
+          <label htmlFor="single">
+            <AiFillCamera />
+          </label>
+          <input
+            style={{
+              visibility: 'hidden',
+              position: 'absolute',
+            }}
+            type="file"
+            id="single"
+            accept="image/*"
+            onChange={uploadAvatar}
+            disabled={uploading}
+          />
+        </span>
       </div>
       <div style={{ width: size, textAlign: 'center' }}>
         <label htmlFor="single">
