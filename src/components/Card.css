@@ -11,6 +11,26 @@
   background-color: #f4c430;
 }
 
+.card-top {
+  min-width: 100%;
+}
+
+.card-title {
+  color: black;
+}
+
+.expand-card {
+  background: none;
+  color: black;
+  border: none;
+  font-size: 30px;
+  padding: 1rem;
+}
+
+.expand-card:hover {
+  border: none;
+}
+
 .content-box {
   width: 98%;
   border: 2px solid white;
