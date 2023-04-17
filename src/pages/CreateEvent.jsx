@@ -2,11 +2,14 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import './CreateEvent.css';
 
-const CreateEvent = () => {
+const CreateEvent = ({ session }) => {
+  const user = session.user;
+
   const [event, setEvent] = useState({
     title: "",
     description: "",
     date: (new Date()).toISOString().slice(0, 10),
+    user_id: user.id,
   });
 
   const handleChange = (e) => {
@@ -20,7 +23,7 @@ const CreateEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await supabase.from("Events").insert(event).select();
-    window.location = "/";
+    window.location = "/calendar";
   }
 
   const handleCancel = () => {

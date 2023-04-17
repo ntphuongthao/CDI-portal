@@ -145,7 +145,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home data={filteredData} />} />
             <Route path='/new-post' element={<CreatePost />} />
-            <Route path='/new-event' element={<CreateEvent />} />
+            <Route path='/new-event' element={<CreateEvent session={session} />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
             <Route path='/calendar' element={<CustomCalendar />} />
             <Route path='/games' element={<Games />} />

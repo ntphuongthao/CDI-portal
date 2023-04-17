@@ -1,13 +1,37 @@
+import { useEffect, useState } from "react";
 import "./EventCard.css";
+import { supabase } from "../supabaseClient";
 
 const EventCard = ({ event }) => {
+  const [username, setUsername] = useState(null);
+
   const {
-    created_at: createdAt, title, description
+    created_at: createdAt, title, description, user_id: userId,
   } = event;
   const monthNames = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
   ];
+
+  useEffect(() => {
+    async function getProfile() {
+
+      let { data, error } = await supabase
+        .from('profiles')
+        .select(`username, website, avatar_url`)
+        .eq('id', userId)
+        .single();
+
+      if (error) {
+        alert("Change your profile!");
+        return;
+      } else if (data) {
+        setUsername(data.username);
+      }
+    }
+    
+    getProfile();
+  }, []);
 
   const dateObj = new Date(createdAt);
 
@@ -24,7 +48,8 @@ const EventCard = ({ event }) => {
         <div className="event-date">{date}</div>
       </div>
       <div className="event-content">
-        <h3>{title}</h3>
+        <h2>{title}</h2>
+        <p>Created by: {username}</p>
         <p>{description}</p>
       </div>
     </div>

@@ -55,11 +55,11 @@ const CustomCalendar = () => {
           }
         </div>
       </div>
-      <div className="all-events-container container">
-        <h1>All Events</h1>
+      <div className="all-events-container">
+        <h1 style={{textAlign: "center"}}>All Events</h1>
         <div>
           {events && events.map((event) => (
-            <EventCard event={event}/>
+            <EventCard key={event.created_at} event={event}/>
           ))}
         </div>
       </div>
