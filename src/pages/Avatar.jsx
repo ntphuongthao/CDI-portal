@@ -66,7 +66,7 @@ export default function Avatar({ url, size, onUpload }) {
       <div className="camera-img">
         <span className='camera-span'><AiFillCamera /></span>
       </div>
-      <div style={{ width: size }}>
+      <div style={{ width: size, textAlign: 'center' }}>
         <label htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
