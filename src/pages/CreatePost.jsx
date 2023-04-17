@@ -2,13 +2,16 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import './EditPost.css';
 
-const CreatePost = () => {
+const CreatePost = ({ session }) => {
+  const user = session.user;
+
   const [post, setPost] = useState({
     title: "",
     description: "",
     likes: 0,
     dislikes: 0,
     image: "",
+    user_id: user.id,
   });
 
   const handleChange = (event) => {
@@ -21,7 +24,7 @@ const CreatePost = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await supabase.from("Posts").insert({title: post.title, description : post.description, image: post.image}).select();
+    await supabase.from("Posts").insert({title: post.title, description : post.description, image: post.image, user_id: post.user_id}).select();
     window.location = "/";
   }
 

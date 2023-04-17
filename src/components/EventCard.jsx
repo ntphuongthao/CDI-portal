@@ -23,7 +23,6 @@ const EventCard = ({ event }) => {
         .single();
 
       if (error) {
-        alert("Change your profile!");
         return;
       } else if (data) {
         setUsername(data.username);
