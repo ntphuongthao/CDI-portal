@@ -52,6 +52,30 @@ button:hover {
   border-color: white;
 }
 
+.sortedButtons button:hover {
+  color:#1a1a1a;
+  background-color: #e1ad01;
+}
+
+.search-bar button:hover {
+  border-color: #1a1a1a;
+  background-color: #e1ad01;
+  color: #1a1a1a;
+}
+
+.updateBtn {
+  background-color: #e1ad01;
+}
+
+.updateBtn:hover {
+  background-color: #DAA520;
+}
+
+.signUpBtn:hover {
+  background-color: #e1ad01;
+  color: #1a1a1a;
+}
+
 .container {
   display: flex;
   flex-direction: column;
