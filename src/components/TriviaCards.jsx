@@ -3,6 +3,7 @@ import { trivia } from "../countries";
 import './TriviaCards.css';
 import { VscDebugRestart } from 'react-icons/vsc';
 import Confetti from "./Confetti";
+import { AiOutlineQuestionCircle } from 'react-icons/ai';
 
 const TriviaCards = () => {
   const countries = trivia.map(item => Object.keys(item)[0]);
@@ -108,6 +109,13 @@ const TriviaCards = () => {
         )}
       </div>
       <Confetti correct={correct} handleSubmit={handleSubmit}/>
+      {correct && (
+        <div className="fun-fact">
+          <h2 className="correct">Correct!!!</h2>
+          <h3 className="flex"><AiOutlineQuestionCircle />Maybe you don't know:</h3>
+          <p>{foodDescription}</p>
+        </div>
+      )}
     </div>
   );
 }

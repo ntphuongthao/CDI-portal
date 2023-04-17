@@ -29,3 +29,19 @@
 .option-selected {
   background-color: #e1ad01;
 }
+
+.correct {
+  font-size: 50px;
+  color: aquamarine;
+  text-align: center;
+  -webkit-text-stroke: 2px black;
+  text-shadow: -1px -1px 0 black,  
+                1px -1px 0 black,
+               -1px  1px 0 black,
+                1px  1px 0 black;
+}
+
+.fun-fact {
+  color: black;
+  padding: 1rem;
+}

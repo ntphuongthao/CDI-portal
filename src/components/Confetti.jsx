@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
 
 const canvasStyles = {
@@ -13,20 +13,24 @@ const canvasStyles = {
 export default function Confetti({ correct, handleSubmit }) {
   const refAnimationInstance = useRef(null);
 
+  useEffect(() => {
+    if (correct) fire();
+  }, [correct]);
+
   const getInstance = useCallback((instance) => {
     refAnimationInstance.current = instance;
   }, []);
 
-  const makeShot = useCallback((particleRatio, opts) => {
+  const makeShot = (particleRatio, opts) => {
     refAnimationInstance.current &&
       refAnimationInstance.current({
         ...opts,
         origin: { y: 0.7 },
         particleCount: Math.floor(200 * particleRatio)
       });
-  }, []);
+  };
 
-  const fire = useCallback(() => {
+  const fire = () => {
     makeShot(0.25, {
       spread: 26,
       startVelocity: 55
@@ -53,11 +57,11 @@ export default function Confetti({ correct, handleSubmit }) {
       spread: 120,
       startVelocity: 45
     });
-  }, [makeShot]);
+  };
 
   const handleClick = () => {
-    handleSubmit();
     if (correct) fire();
+    handleSubmit();
   }
 
   return (
