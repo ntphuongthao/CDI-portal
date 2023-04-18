@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import ToolBar from "./ToolBar";
-import StarRating from "./StarRating";
-import { CgMoreVerticalO } from 'react-icons/cg';
+import { FiMoreHorizontal } from 'react-icons/fi';
 import { supabase } from "../supabaseClient";
 
 const Card = (props) => {
@@ -61,32 +60,36 @@ const Card = (props) => {
     <div className="card">
       <div className="flex card-top" style={{justifyContent: "space-between"}}>
         <div className="card-title flex">
-          <div className="container" style={{borderRight: '2px solid black', paddingRight: '1rem'}}>
-            {avatar && (
+          <div className="container">
+            {avatar ? (
               <img
                 src={avatar}
                 alt="Avatar"
-                className="avatar image"
-                style={{ height: '70px', width: '70px' }}
+                className="card-avatar"
+              />
+            ) : (
+              <img
+                className="card-avatar"
+                src="./noprofile.png"
+                alt="No Profile picture"
               />
             )}
             <p>{username}</p>
           </div>
-          <div style={{marginLeft: '2rem'}}>
-            <h2>{post.title}</h2>
-            <p>{new Date(post.created_at).toString().substring(0, 24)}</p>
+          <div style={{marginLeft: '1rem'}}>
+            <h3>{post.title}</h3>
+            <p className="card-date">{new Date(post.created_at).toString().substring(0, 24)}</p>
           </div>
         </div>
 
         <button className="expand-card">
           <Link to={`/edit/${post.id}`} style={{color: "black"}}>
-            <CgMoreVerticalO />
+            <FiMoreHorizontal />
           </Link>
         </button>
       </div>
       <div className="content-box">
         <p>{post.description}</p>
-        <StarRating />
         {post.image && <img className="content-img" src={post.image} alt="Some image" width="350px"/>}
       </div>
       <ToolBar post={post} />

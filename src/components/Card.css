@@ -3,20 +3,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 2px solid white;
   width: 1000px;
   margin: 10px;
-  padding: 10px;
-  background-color: #f4c430;
+  background-color: white;
 }
 
 .card-top {
+  padding: 0;
   min-width: 100%;
+  border-bottom: 2px solid #c6c6d0;
 }
 
 .card-title {
   color: black;
+}
+
+.card-avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.card-date {
+  font-size: 0.75rem;
 }
 
 .expand-card {
@@ -33,12 +44,12 @@
 
 .content-box {
   width: 98%;
-  border: 2px solid white;
   align-items: center;
   min-height: 150px;
   height: auto;
   background-color: white;
   color: black;
+  padding: 1rem;
 }
 
 .content-box p {

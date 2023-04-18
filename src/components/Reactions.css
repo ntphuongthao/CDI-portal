@@ -8,3 +8,8 @@
   background-color: brown;
   transition: all 0.2s ease-in;
 }
+
+.react-buttons {
+  border-top: 2px solid #c6c6d0;
+  width: 100%;
+}
