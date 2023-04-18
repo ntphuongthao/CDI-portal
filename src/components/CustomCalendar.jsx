@@ -20,11 +20,12 @@ const CustomCalendar = () => {
   }, []);
 
   useEffect(() => {
+    console.log(date);
     if (events) showDateEvents();
   }, [date, events])
 
-  const tileClassName = ({ date, view }) => {
-    if (view === 'month' && date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getYear() === new Date().getYear()) {
+  const tileClassName = ({ date: datetime, view }) => {
+    if (view === 'month' && datetime.getDate() === new Date(date).getDate() && datetime.getMonth() === new Date(date).getMonth() && datetime.getYear() === new Date(date).getYear()) {
       // This sets the background color for the current date
       return 'current-date';
     }
