@@ -1,3 +1,8 @@
 .sortedButtons {
   margin-bottom: 1rem;
 }
+
+.highlightedBtn {
+  background-color: #e1ad01;
+  color: black;
+}

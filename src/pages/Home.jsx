@@ -4,11 +4,12 @@ import './Home.css';
 
 const Home = (props) => {
   const [data, setData] = useState(null);
-  const [sortedBy, setSortedBy] = useState(null);
+  const [sortedBy, setSortedBy] = useState('');
 
   useEffect(() => {
     setData(props.data);
   }, [props]);
+
 
   const handleOrderNewest = () => {
     const postsSorted = [...data].sort((a, b) => {
@@ -16,13 +17,13 @@ const Home = (props) => {
       const dateB = new Date(b.created_at);
       return dateB - dateA;
     });
-    setSortedBy("newest history of posts");
+    setSortedBy("newest");
     setData(postsSorted);
   }
 
   const handleOrderPopular = () => {
     const postsSorted = [...data].sort((a, b) => b.likes - a.likes);
-    setSortedBy("popularity of posts");
+    setSortedBy("popularity");
     setData(postsSorted);
   }
 
@@ -31,8 +32,8 @@ const Home = (props) => {
       <div className="container sortedButtons">
         <div className="flex">
           <h3>Order by:</h3>
-          <button onClick={handleOrderNewest}>Newest</button>
-          <button onClick={handleOrderPopular}>Most Popular</button>
+          <button className={sortedBy === 'newest' ? 'highlightedBtn' : ''} onClick={handleOrderNewest}>Newest</button>
+          <button className={sortedBy === 'popularity' ? 'highlightedBtn' : ''} onClick={handleOrderPopular}>Most Popular</button>
         </div>
         <p>{!sortedBy ? "Posts are currently not sorted by any order!": `Posts are currently sorted by ${sortedBy}!`}</p> 
       </div>
