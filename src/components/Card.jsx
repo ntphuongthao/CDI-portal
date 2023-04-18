@@ -74,7 +74,7 @@ const Card = (props) => {
                 alt="No Profile picture"
               />
             )}
-            <p>{username}</p>
+            <p><b>{username}</b></p>
           </div>
           <div style={{marginLeft: '1rem'}}>
             <h3>{post.title}</h3>

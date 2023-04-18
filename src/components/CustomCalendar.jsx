@@ -46,7 +46,7 @@ const CustomCalendar = () => {
               <h2>Events on {date.toDateString()}</h2>
               <ul>
                 {displayedEvents.map((event) => (
-                  <li key={event.id}>{event.title}</li>
+                  <EventCard event={event} key={event.id} />
                 ))}
               </ul>
             </>) : (
