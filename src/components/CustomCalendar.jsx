@@ -61,7 +61,10 @@ const CustomCalendar = () => {
       </div>
 
       <div className="all-events-container">
-        <h1 style={{textAlign: "center"}}>All Events</h1>
+        <h1 className='flex'>
+          All Events
+          <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
+        </h1>
         <div>
           {events && events.map((event) => (
             <EventCard key={event.created_at} event={event}/>
