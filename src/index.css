@@ -21,8 +21,9 @@ a {
   color: #e1ad01;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #e1ad01;
+  color: black;
 }
 
 body {
