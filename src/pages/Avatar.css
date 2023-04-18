@@ -15,18 +15,28 @@
   border-radius: 5px;
 }
 
-.camera-img {
-  /* Do sthg here */
-}
-
 .camera-span {
   background-color: white;
   color: black;
   padding: 10px;
   border-radius: 50%;
-  position: absolute;
+  /* position: absolute; */
   width: 45px;
   text-align: center;
   top: 310px;
   left: 970px;
 }
+
+.camera-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.camera-img {
+  align-self: flex-end;
+  margin-top: -1em;
+  margin-right: -1em;
+}
+
+
+

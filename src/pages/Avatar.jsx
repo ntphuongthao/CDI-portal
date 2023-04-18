@@ -53,35 +53,40 @@ export default function Avatar({ url, size, onUpload }) {
 
   return (
     <div>
-      {avatarUrl ? (
-        <img
-          src={avatarUrl}
-          alt="Avatar"
-          className="avatar image"
-          style={{ height: size, width: size }}
-        />
-      ) : (
-        <div className="avatar no-image" style={{ height: size, width: size }} />
-      )}
-      <div className="camera-img">
-        <span className='camera-span'>
-          <label htmlFor="single">
-            <AiFillCamera />
-          </label>
-          <input
-            style={{
-              visibility: 'hidden',
-              position: 'absolute',
-            }}
-            type="file"
-            id="single"
-            accept="image/*"
-            onChange={uploadAvatar}
-            disabled={uploading}
+      <div className="camera-flex">
+        {avatarUrl ? (
+          <img
+            src={avatarUrl}
+            alt="Avatar"
+            className="avatar image"
+            style={{ height: size, width: size }}
           />
-        </span>
+        ) : (
+          <div className="avatar no-image" style={{ height: size, width: size }} />
+        )}
+
+        <div className="camera-img">
+          <span className='camera-span'>
+            <label htmlFor="single">
+              <AiFillCamera />
+            </label>
+            <input
+              style={{
+                visibility: 'hidden',
+                position: 'absolute',
+              }}
+              type="file"
+              id="single"
+              accept="image/*"
+              onChange={uploadAvatar}
+              disabled={uploading}
+            />
+          </span>
+        </div>
       </div>
-      <div style={{ width: size, textAlign: 'center' }}>
+      
+      
+      <div style={{ width: size, textAlign: 'center'}}>
         <label htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
