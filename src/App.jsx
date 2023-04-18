@@ -14,6 +14,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import Games from './components/Games';
 import { RiAccountCircleFill } from 'react-icons/ri';
 import Account from './pages/Account';
+import RealTimeChat from './components/chat/RealTimeChat';
 
 function App() {
   const [data, setData] = useState([]);
@@ -125,6 +126,7 @@ function App() {
                   <li><Link to="/new-event">New Event</Link></li>
                 </ul>
               </li> |
+              <li><Link to="/chat">Chat</Link></li> | 
               <li className='nav-icon'><Link to='/account'><RiAccountCircleFill /> {username ? username: "Anonymous"}</Link></li> | 
               <li className='nav-icon' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
@@ -149,6 +151,7 @@ function App() {
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
             <Route path='/calendar' element={<CustomCalendar />} />
             <Route path='/games' element={<Games />} />
+            <Route path='/chat' element={<RealTimeChat session={session} />} />
             <Route path='/account' element={<Account session={session} />} />
           </Routes>) : 
         (
