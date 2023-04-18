@@ -8,7 +8,7 @@ const reactions = [
 
 const Reactions = ({ likes, dislikes, handleReactionClick }) => {
   return (
-    <div className='flex react-buttons'>
+    <div className='flex'>
       {reactions.map(({ type, label, icon }) => (
         <div key={type} className="flex">
           <button className={`${type}Btn`} onClick={() => handleReactionClick(type)}>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Reactions from "./Reactions";
+import PostComments from "./PostComments";
 import { supabase } from "../supabaseClient";
+import './ToolBar.css';
 
 const ToolBar = (props) => {
   const [post, setPost] = useState(null);
@@ -38,15 +40,18 @@ const ToolBar = (props) => {
   };
 
   return (
-    <>
+    <div className="toolBar-container">
       {post && post.title && (
-        <Reactions
-          likes={post.likes}
-          dislikes={post.dislikes}
-          handleReactionClick={handleReactionClick}
-        />
+        <div className="flex" style={{padding: 0}}>
+          <Reactions
+            likes={post.likes}
+            dislikes={post.dislikes}
+            handleReactionClick={handleReactionClick}
+          />
+          <PostComments />
+        </div>
       )}
-    </>
+    </div>
   );
 }
 
