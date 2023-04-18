@@ -39,7 +39,6 @@ function RealTimeChat({ session }) {
           'postgres_changes', 
           { event: 'INSERT', schema: 'public', table: 'messages' },
           (payload) => {
-            console.log('here');
             console.log('Change received!', payload)
           }
         )

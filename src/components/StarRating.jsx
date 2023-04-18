@@ -4,7 +4,6 @@ function StarRating() {
   const [rating, setRating] = useState(0);
 
   const handleClick = (index) => {
-    console.log(index);
     setRating(index);
   };
 

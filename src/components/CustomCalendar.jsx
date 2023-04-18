@@ -20,7 +20,6 @@ const CustomCalendar = () => {
   }, []);
 
   useEffect(() => {
-    console.log(date);
     if (events) showDateEvents();
   }, [date, events])
 
