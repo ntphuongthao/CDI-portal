@@ -6,7 +6,7 @@ const EventCard = ({ event }) => {
   const [username, setUsername] = useState(null);
 
   const {
-    created_at: createdAt, title, description, user_id: userId,
+    created_at: createdAt, title, description, user_id: userId, date: eventDate,
   } = event;
   const monthNames = [
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
@@ -32,7 +32,8 @@ const EventCard = ({ event }) => {
     getProfile();
   }, []);
 
-  const dateObj = new Date(createdAt);
+  const dateObj = new Date(eventDate);
+  dateObj.setHours(dateObj.getHours() + 24);
 
   const month = monthNames[dateObj.getMonth()];
   const date = dateObj.getDate();

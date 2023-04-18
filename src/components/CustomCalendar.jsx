@@ -19,6 +19,10 @@ const CustomCalendar = () => {
     fetchEvents();
   }, []);
 
+  useEffect(() => {
+    if (events) showDateEvents();
+  }, [date, events])
+
   const tileClassName = ({ date, view }) => {
     if (view === 'month' && date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getYear() === new Date().getYear()) {
       // This sets the background color for the current date
@@ -26,8 +30,8 @@ const CustomCalendar = () => {
     }
   };
 
-  const handleClick = () => {
-    const filteredEvents = events.filter((event) => event.date === new Date(date).toISOString().slice(0, 10));
+  const showDateEvents = () => {
+    const filteredEvents = events.filter((e) => e.date === new Date(date).toISOString().slice(0, 10));
     setDisplayedEvents(filteredEvents);
   };
 
@@ -38,7 +42,6 @@ const CustomCalendar = () => {
           onChange={setDate}
           value={date}
           tileClassName={tileClassName}
-          onClickDay={handleClick}
         />
         <div className='current-events'>
           {(displayedEvents && displayedEvents.length > 0) ?
@@ -55,6 +58,7 @@ const CustomCalendar = () => {
           }
         </div>
       </div>
+
       <div className="all-events-container">
         <h1 style={{textAlign: "center"}}>All Events</h1>
         <div>
