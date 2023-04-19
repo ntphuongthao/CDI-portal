@@ -4,6 +4,8 @@
 
 .flashcard-select {
   background-color: #e1ad01;
+  color: black;
+  border: 2px solid white;
   margin: 1rem;
   width: 160px;
 }
@@ -26,4 +28,8 @@
   min-height: 600px;
   margin: 0 1.5rem 36px 1.5rem;
   padding: 1rem;
+}
+
+.triviaBtn:hover {
+  border: 2px solid black;
 }
