@@ -98,7 +98,7 @@ function App() {
           </Link>
           {session && (
             <>
-              <li><Link to='/'>Home</Link></li> | 
+              <li><Link to='/'>Dash Board</Link></li> | 
               <li><Link to='/calendar'>Ongoing events</Link></li> | 
               <li><Link to='/games'>Games</Link></li> 
             </>
