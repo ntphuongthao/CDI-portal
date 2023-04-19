@@ -60,7 +60,7 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="container">
+    <div className="container addMarginTop">
       <h2 className='title'>Edit Your Profile!</h2>
       <form onSubmit={updateProfile} className="container">
         <Avatar

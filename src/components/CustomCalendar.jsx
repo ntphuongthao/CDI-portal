@@ -36,7 +36,7 @@ const CustomCalendar = () => {
   };
 
   return (
-    <div className='flex' style={{justifyContent: 'space-around'}}>
+    <div className='flex' style={{justifyContent: 'space-around', padding: 0}}>
       <div className="calendar calendar-container">
         <Calendar
           onChange={setDate}
@@ -49,7 +49,7 @@ const CustomCalendar = () => {
               <h2>Events on {date.toDateString()}</h2>
               <ul>
                 {displayedEvents.map((event) => (
-                  <EventCard event={event} key={event.id} />
+                  <EventCard event={event} key={event.id} whiteBorder={true} />
                 ))}
               </ul>
             </>) : (
@@ -66,7 +66,7 @@ const CustomCalendar = () => {
         </h1>
         <div>
           {events && events.map((event) => (
-            <EventCard key={event.created_at} event={event}/>
+            <EventCard key={event.created_at} event={event} whiteBorder={false} />
           ))}
         </div>
       </div>

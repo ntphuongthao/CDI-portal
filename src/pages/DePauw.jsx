@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const DePauw = () => {
   return (
-    <div className="container">
+    <div className="container addMarginTop">
       <h1>Welcome to Center of Diversity and Inclusion Portal!</h1>
       <p>Feel free to share your 
         ideas and viewpoints here! We appreciate any input as it helps to enhance the diversity of DePauw.</p>

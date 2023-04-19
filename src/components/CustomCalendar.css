@@ -19,6 +19,8 @@
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  background-color: antiquewhite;
+  color: black;
 }
 
 .current-events {

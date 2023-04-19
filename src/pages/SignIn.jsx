@@ -25,7 +25,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container addMarginTop">
       <h2>Log into your account</h2>
       <form onSubmit={signInWithEmail}>
         {error && 

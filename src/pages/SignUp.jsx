@@ -23,7 +23,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container addMarginTop">
       {loading ? "Loading..." : (
         <>
           <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />

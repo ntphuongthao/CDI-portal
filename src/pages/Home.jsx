@@ -28,7 +28,7 @@ const Home = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{marginTop: '2rem'}}>
       <div className="container sortedButtons">
         <div className="flex">
           <h3>Order by:</h3>

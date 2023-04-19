@@ -31,7 +31,7 @@ const CreateEvent = ({ session }) => {
   }
 
   return (
-    <div className="edit">
+    <div className="edit addMarginTop">
       <h2 className="title">Create your new Event!</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label><br/>

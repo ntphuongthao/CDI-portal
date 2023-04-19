@@ -21,7 +21,7 @@ const Games = () => {
 
   return (
     <>
-      <div className="flex" style={{justifyContent: 'space-between'}}>
+      <div className="flex addMarginTop" style={{justifyContent: 'space-between'}}>
         <div className="game-introduction container">
           <h2>Flashcard Game</h2>
           <img className='game-image' src="./vocabulary-flashcard.jpeg" alt="Vocabulary Flashcard" width="600px"/>

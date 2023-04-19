@@ -33,7 +33,7 @@ const CreatePost = ({ session }) => {
   }
 
   return (
-    <div className="edit">
+    <div className="edit addMarginTop">
       <h2 className="title">Create your new Post!</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label><br/>

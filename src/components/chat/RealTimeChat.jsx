@@ -86,7 +86,7 @@ function RealTimeChat({ session }) {
   };
 
   return (
-    <div className="flex">
+    <div className="flex addMarginTop">
       <div className="container chat-container flex">
         <ul className="chatbox flex">
           {messages.map((message) => (
