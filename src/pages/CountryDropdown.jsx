@@ -1,6 +1,6 @@
 const CountryDropdown = ({ country, handleChange }) => {
   return (
-    <select id="country" value={country} name="country" onChange={handleChange}>
+    <select className="selectCountry" id="country" value={country} name="country" onChange={handleChange}>
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
       <option value="Albania">Albania</option>

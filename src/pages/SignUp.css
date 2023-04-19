@@ -1,3 +1,13 @@
+.registration-form {  
+  margin: 2rem;
+  background-color: white;
+  width: 40%;
+  color: black;
+  padding: 1rem;
+  border-top: 5px solid #e1ad01;
+  border-bottom: 5px solid #e1ad01;
+}
+
 .school-logo {
   margin-bottom: 2rem;
   margin-top: 1rem;
@@ -5,4 +15,10 @@
 
 .signUpBtn:hover {
   background-color: brown;
+  border-color: black;
+}
+
+.selectCountry {
+  height: 42.5px;
+  width: 100%;
 }

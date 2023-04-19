@@ -2,6 +2,9 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import CountryDropdown from "./CountryDropdown";
 import "./SignUp.css";
+import { AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
+import { RiLockPasswordLine } from 'react-icons/ri';
+import { MdOutlinePlace } from 'react-icons/md';
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
@@ -46,53 +49,60 @@ const SignUp = () => {
   }
 
   return (
-    <div className="container addMarginTop">
-      {loading ? "Loading..." : (
-        <>
-          <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />
-          <h3>You can register your account here!</h3>
-          <form onSubmit={handleSubmit}>
+    <div className="container">
+      <div className="container registration-form">
+        {loading ? "Loading..." : (
+          <>
+            <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />
+            <h2>Registration Form</h2>
+            <form onSubmit={handleSubmit}>
 
-            <label htmlFor="username">Username</label>
-            <input type="text" name="username" value={user.username} onChange={handleChange} />
+              <div className="flex">
+                <AiOutlineUser size={30} />
+                <input placeholder="Username" type="text" name="username" value={user.username} onChange={handleChange} />
+              </div>
+              <div className="flex">
+                <AiOutlineMail size={30} />
+                <input placeholder="Email" type="text" name="email" value={user.email} onChange={handleChange} />
+              </div>
+              <div className="flex">
+                <RiLockPasswordLine size={30} />
+                <input placeholder="Password" type="password" name="password" value={user.password} onChange={handleChange} />
+              </div>
+              <div className="flex">
+                <MdOutlinePlace size={30} />
+                <CountryDropdown country={user.country} handleChange={handleChange}/>
+              </div>
+              <div className="flex">
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked={user.gender === 'male'}
+                    onChange={handleChange}
+                  />
+                  Male
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    checked={user.gender === 'female'}
+                    onChange={handleChange}
+                  />
+                  Female
+                </label>
+              </div>
 
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" value={user.email} onChange={handleChange} />
-
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" value={user.password} onChange={handleChange} /><br/>
-
-            <CountryDropdown country={user.country} handleChange={handleChange}/>
-
-            <div className="flex">
-              <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="male"
-                  checked={user.gender === 'male'}
-                  onChange={handleChange}
-                />
-                Male
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="female"
-                  checked={user.gender === 'female'}
-                  onChange={handleChange}
-                />
-                Female
-              </label>
-            </div>
-
-            <div className="flex">
-              <button className="signUpBtn" type="submit">Register</button>
-            </div>
-          </form>
-        </>
-      )}
+              <div className="flex">
+                <button className="signUpBtn" type="submit">Register</button>
+              </div>
+            </form>
+          </>
+        )}
+      </div>  
     </div>
   );
 }
