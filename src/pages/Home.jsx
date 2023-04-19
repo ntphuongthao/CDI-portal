@@ -38,7 +38,7 @@ const Home = (props) => {
         <p>{!sortedBy ? "Posts are currently not sorted by any order!": `Posts are currently sorted by ${sortedBy}!`}</p> 
       </div>
 
-      <h1 className="title">View All Posts</h1>
+      <h1 className="title">Dashboard</h1>
       {data ? (data.map((post) => (
         <div key={post.id}>
           <Card post={post}/>

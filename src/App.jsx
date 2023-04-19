@@ -98,7 +98,7 @@ function App() {
           </Link>
           {session && (
             <>
-              <li><Link to='/'>Dash Board</Link></li> | 
+              <li><Link to='/'>Dashboard</Link></li> | 
               <li><Link to='/calendar'>Ongoing events</Link></li> | 
               <li><Link to='/games'>Games</Link></li> 
             </>
@@ -126,7 +126,7 @@ function App() {
                   <li><Link to="/new-event">New Event</Link></li>
                 </ul>
               </li> |
-              <li><Link to="/chat">Chat</Link></li> | 
+              <li><Link to="/chat">Get connected!</Link></li> | 
               <li className='nav-icon'><Link to='/account'><RiAccountCircleFill /> {username ? username: "Anonymous"}</Link></li> | 
               <li className='nav-icon' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
