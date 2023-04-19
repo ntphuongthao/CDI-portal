@@ -36,7 +36,7 @@ const CustomCalendar = () => {
   };
 
   return (
-    <div className='flex' style={{justifyContent: 'space-around', padding: 0}}>
+    <div className='flex' style={{justifyContent: 'space-around', padding: 0, alignItems: 'flex-start'}}>
       <div className="calendar calendar-container">
         <Calendar
           onChange={setDate}
