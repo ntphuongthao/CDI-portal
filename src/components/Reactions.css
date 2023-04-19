@@ -1,7 +1,8 @@
 .likeBtn:hover {
-  background-color: #0C57ED;
+  background-color: #E5F501;
   border: 2px solid black;
   transition: all 0.2s ease-in;
+  color: black;
 }
 
 .dislikeBtn:hover {
