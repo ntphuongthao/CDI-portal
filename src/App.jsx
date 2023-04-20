@@ -10,17 +10,16 @@ import SignIn from './pages/SignIn';
 import DePauw from './pages/DePauw';
 import CustomCalendar from './components/CustomCalendar';
 import CreateEvent from './pages/CreateEvent';
-import { FaSignOutAlt } from 'react-icons/fa';
 import Games from './components/Games';
-import { RiAccountCircleFill } from 'react-icons/ri';
 import Account from './pages/Account';
 import RealTimeChat from './components/chat/RealTimeChat';
+import { FaSignOutAlt } from 'react-icons/fa';
+import { RiAccountCircleFill } from 'react-icons/ri';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 
 function App() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
   const [session, setSession] = useState(null);
   const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
@@ -69,12 +68,6 @@ function App() {
     if (session) getProfile();
   }, [session]);
 
-  const handleSearch = useCallback((event) => {
-    setSearchInput(event.target.value);
-    const filteredData = data.filter((post) => post.title.includes(event.target.value.trim()) || post.description.includes(event.target.value.trim()));
-    setFilteredData(filteredData);
-  }, [data]);
-
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
@@ -82,12 +75,6 @@ function App() {
       return;
     }
     window.location = '/';
-  }
-
-  const handleClear = (e) => {
-    e.preventDefault();
-    setSearchInput("");
-    setFilteredData(data);
   }
 
   return (
@@ -106,18 +93,6 @@ function App() {
             </>
           )}
         </div>
-        {session && <form className='flex search-bar'>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchInput}
-            onChange={handleSearch}
-            style={{
-              fontFamily: "'Raleway', sans-serif"
-            }}
-          />
-          <button type="submit" onClick={handleClear}>Clear</button>
-        </form>}
         <ul className='flex nav-links'>
           {session &&
             (<>
@@ -151,7 +126,7 @@ function App() {
       {session ? 
         (
           <Routes>
-            <Route path='/' element={<Home data={filteredData} />} />
+            <Route path='/' element={<Home data={data} />} />
             <Route path='/new-post' element={<CreatePost session={session} />} />
             <Route path='/new-event' element={<CreateEvent session={session} />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />

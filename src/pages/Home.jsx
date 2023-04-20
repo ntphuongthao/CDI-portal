@@ -1,13 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Card from "../components/Card";
 import './Home.css';
 
 const Home = (props) => {
   const [data, setData] = useState(null);
   const [sortedBy, setSortedBy] = useState('');
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
+
+  const handleSearch = useCallback((event) => {
+    setSearchInput(event.target.value);
+    const filteredData = data.filter((post) => post.title.includes(event.target.value.trim()) || post.description.includes(event.target.value.trim()));
+    setFilteredData(filteredData);
+  }, [data]);
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    setSearchInput("");
+    setFilteredData(data);
+  }
 
   useEffect(() => {
     setData(props.data);
+    setFilteredData(props.data);
   }, [props]);
 
 
@@ -29,6 +45,19 @@ const Home = (props) => {
 
   return (
     <div className="container addMarginTop">
+      <form className='flex search-bar'>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchInput}
+          onChange={handleSearch}
+          style={{
+            fontFamily: "'Raleway', sans-serif"
+          }}
+        />
+        <button type="submit" onClick={handleClear}>Clear</button>
+      </form>
+
       <div className="container sortedButtons">
         <div className="flex">
           <h3>Order by:</h3>
@@ -39,7 +68,7 @@ const Home = (props) => {
       </div>
 
       <h1 className="title">Dashboard</h1>
-      {data ? (data.map((post) => (
+      {filteredData && filteredData.length > 0 ? (filteredData.map((post) => (
         <div key={post.id}>
           <Card post={post}/>
           <br /><br />
