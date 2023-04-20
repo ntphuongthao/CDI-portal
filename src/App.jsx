@@ -15,6 +15,7 @@ import Games from './components/Games';
 import { RiAccountCircleFill } from 'react-icons/ri';
 import Account from './pages/Account';
 import RealTimeChat from './components/chat/RealTimeChat';
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 function App() {
   const [data, setData] = useState([]);
@@ -100,7 +101,8 @@ function App() {
             <>
               <li><Link to='/'>Dashboard</Link></li> | 
               <li><Link to='/calendar'>Ongoing events</Link></li> | 
-              <li><Link to='/games'>Games</Link></li> 
+              <li><Link to='/games'>Games</Link></li> | 
+              <li><Link to="/chat">Get connected!</Link></li> 
             </>
           )}
         </div>
@@ -119,14 +121,6 @@ function App() {
         <ul className='flex nav-links'>
           {session &&
             (<>
-              <li className="dropdown">
-                <a href="#">Create <span className="arrow"></span></a>
-                <ul>
-                  <li><Link to="/new-post">New Post</Link></li>
-                  <li><Link to="/new-event">New Event</Link></li>
-                </ul>
-              </li> |
-              <li><Link to="/chat">Get connected!</Link></li> | 
               <li className='nav-icon'><Link to='/account'><RiAccountCircleFill /> {username ? username: "Anonymous"}</Link></li> | 
               <li className='nav-icon' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
@@ -141,6 +135,18 @@ function App() {
           }
         </ul>
       </nav>
+      {session && (
+        <div className='dropdown-box'>
+          <li className="dropdown">
+            <ul className='dropdown-list'>
+              <li><Link to="/new-post">New Post</Link></li>
+              <li><Link to="/new-event">New Event</Link></li>
+            </ul>
+            <IoMdAddCircleOutline size={45} />
+          </li>
+          
+        </div>
+      )}
 
       {session ? 
         (

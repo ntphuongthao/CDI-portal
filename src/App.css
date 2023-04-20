@@ -42,27 +42,47 @@ nav {
   width: 400px;
 }
 
-nav li.dropdown {
+.dropdown-box {
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  width: 50px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.dropdown-list {
   width: 100px;
+
+}
+
+li.dropdown {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
   display: inline-block;
   position: relative;
   text-align: right;
 }
 
-nav li.dropdown ul {
+li.dropdown ul {
   display: none;
   position: absolute;
   z-index: 1;
+  bottom: 50px;
+  right: 0px;
 }
 
-nav li.dropdown ul li a {
+li.dropdown ul li a {
   display: block;
   background-color: #f8f8f8;
   padding: 8px;
   border-bottom: 2px solid black;
 }
 
-nav li.dropdown:hover ul {
+li.dropdown:hover ul {
   display: block;
 }
 
