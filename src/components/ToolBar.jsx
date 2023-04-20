@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import Reactions from "./Reactions";
-import PostComments from "./PostComments";
 import { supabase } from "../supabaseClient";
 import './ToolBar.css';
 
 const ToolBar = (props) => {
   const [post, setPost] = useState(null);
+  const [displayComments, setDisplayComments] = useState(false);
 
   useEffect(() => {
     setPost(props.post);
@@ -39,8 +39,15 @@ const ToolBar = (props) => {
     }
   };
 
+  const handleShowComments = () => {
+    console.log(123);
+    console.log(displayComments);
+    setDisplayComments(!displayComments);
+  }
+
   return (
     <div className="toolBar-container">
+      {displayComments && (<div className="comments-box"></div>)}
       {post && post.title && (
         <div className="flex" style={{padding: 0}}>
           <Reactions
@@ -48,7 +55,7 @@ const ToolBar = (props) => {
             dislikes={post.dislikes}
             handleReactionClick={handleReactionClick}
           />
-          <PostComments />
+          <button onClick={handleShowComments} className="commentBtn">Comments</button>
         </div>
       )}
     </div>

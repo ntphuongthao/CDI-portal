@@ -3,4 +3,21 @@
   border-top: 2px solid #c6c6d0;
   padding: 0;
   background-color: white;
+  border-radius: 8px;
+}
+
+.commentBtn {
+  background-color: #e1ad01;
+  color: black;
+}
+
+.commentBtn:hover {
+  border: 2px solid black;
+}
+
+.comments-box {
+  min-height: 100px;
+  border: 2px solid #c6c6d0;
+  border-radius: 5px;
+  margin: 12px;
 }

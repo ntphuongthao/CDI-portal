@@ -8,16 +8,18 @@
   width: 1000px;
   margin: 10px;
   background-color: white;
-  background-image: url('./depauw-remove-background.png');
-  background-repeat: no-repeat;
-  background-size: 45%;
-  background-position: 90% 110%;
 }
 
 .card-top {
   padding: 0;
   min-width: 100%;
   border-bottom: 2px solid #c6c6d0;
+  background-color: white;
+  background-image: url('./depauw-remove-background.png');
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: 90% 40%;
+  border-radius: 8px;
 }
 
 .card-title {
