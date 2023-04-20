@@ -16,9 +16,25 @@
 }
 
 .comments-box {
-  min-height: 100px;
+  min-height: 180px;
   border: 2px solid #c6c6d0;
   border-radius: 5px;
   margin: 12px;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comment-writing {
+  width: 100%;;
+}
+
+.sendCommentBtn {
+  background-color: #e1ad01;
+  color: black;
+}
+
+.sendCommentBtn:hover {
+  border: 2px solid black;
 }
