@@ -77,9 +77,10 @@ li.dropdown ul {
 
 li.dropdown ul li a {
   display: block;
-  background-color: #f8f8f8;
+  background-color: white;
   padding: 8px;
-  border-bottom: 2px solid black;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 li.dropdown:hover ul {

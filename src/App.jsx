@@ -115,7 +115,7 @@ function App() {
           <li className="dropdown">
             <ul className='dropdown-list'>
               <li><Link to="/new-post">New Post</Link></li>
-              <li><Link to="/new-event">New Event</Link></li>
+              <li><Link to="/new-event" style={{marginBottom: '5px'}}>New Event</Link></li>
             </ul>
             <IoMdAddCircleOutline size={45} />
           </li>
