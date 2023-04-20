@@ -8,10 +8,31 @@ const ToolBar = (props) => {
   const [post, setPost] = useState(null);
   const [displayComments, setDisplayComments] = useState(false);
   const [comment, setComment] = useState("");
+  const [allComments, setAllComments] = useState([]);
+  const [change, setChange] = useState(false);
 
   useEffect(() => {
     setPost(props.post);
   }, [props]);
+
+  useEffect(() => {
+    fetchAllComments();
+  }, [displayComments, change]);
+
+  const fetchAllComments = async () => {
+    let { data: allComments, error } = await supabase
+      .from('Comments')
+      .select("*")
+      .eq('user_id', props.userId)
+      .eq('post_id', post.id);
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    setAllComments(allComments);
+  }
 
   useEffect(() => {
     const updatePost = async () => {
@@ -25,6 +46,7 @@ const ToolBar = (props) => {
       }).eq('id', post.id);
     };
     updatePost();
+    setChange(!change);
   }, [post]);
 
   const handleReactionClick = (type) => {
@@ -45,10 +67,17 @@ const ToolBar = (props) => {
     setDisplayComments(!displayComments);
   }
 
-  const handleSubmitComment = (e) => {
+  const handleSubmitComment = async (e) => {
     e.preventDefault();
 
-    // Logic code goes here
+    const { data, error } = await supabase
+    .from('Comments')
+    .insert([
+      { content: comment, post_id: post.id, user_id: props.userId},
+    ]);
+
+    if (error) console.log(error);
+    if (data) console.log(data);
 
     setComment("");
   }
@@ -57,7 +86,13 @@ const ToolBar = (props) => {
     <div className="toolBar-container">
       {displayComments && (
         <div className="comments-box">
-          <div></div>
+          <div>
+            {allComments && (
+              allComments.map((comment) => (
+                <div style={{color: 'black'}} key={comment.id} >{comment.content}</div>
+              ))
+            )}
+          </div>
           <form onSubmit={handleSubmitComment} className="flex comment-writing">
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} style={{marginBottom: 0}}/>
             <button type="submit" className="sendCommentBtn"><FiSend/></button>

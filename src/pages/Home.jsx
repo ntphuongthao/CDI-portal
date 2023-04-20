@@ -7,7 +7,7 @@ const Home = (props) => {
   const [sortedBy, setSortedBy] = useState('');
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-
+  const userId = props.session.user.id;
 
   const handleSearch = useCallback((event) => {
     setSearchInput(event.target.value);
@@ -70,7 +70,7 @@ const Home = (props) => {
       <h1 className="title">Dashboard</h1>
       {filteredData && filteredData.length > 0 ? (filteredData.map((post) => (
         <div key={post.id}>
-          <Card post={post}/>
+          <Card post={post} userId={userId}/>
           <br /><br />
         </div>
       ))) : (<h4>There are currently no posts available</h4>)}

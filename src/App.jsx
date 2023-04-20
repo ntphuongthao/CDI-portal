@@ -126,7 +126,7 @@ function App() {
       {session ? 
         (
           <Routes>
-            <Route path='/' element={<Home data={data} />} />
+            <Route path='/' element={<Home data={data} session={session} />} />
             <Route path='/new-post' element={<CreatePost session={session} />} />
             <Route path='/new-event' element={<CreateEvent session={session} />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
