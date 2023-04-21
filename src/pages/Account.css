@@ -3,6 +3,19 @@
   color: black;
 }
 
+.updateBtn:hover {
+  border: 2px solid black;
+}
+
 .signOutBtn {
   background-color: brown;
+}
+
+.account-setting-container {
+  width: 50%;
+  color: black;
+  background-color: white;
+  border-top: 4px solid #e1ad01;
+  border-bottom: 4px solid #e1ad01;
+  padding: 12px;
 }
