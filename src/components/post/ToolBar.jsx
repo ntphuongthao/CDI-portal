@@ -24,7 +24,7 @@ const ToolBar = (props) => {
       .from('Comments')
       .select("*")
       .eq('user_id', props.userId)
-      .eq('post_id', post.id);
+      .eq('post_id', props.post.id);
 
     if (error) {
       alert(error.message);

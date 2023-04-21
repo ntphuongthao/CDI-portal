@@ -8,8 +8,8 @@ import { supabase } from "../../context/supabaseClient";
 const Card = (props) => {
   const [username, setUsername] = useState(null);
   const [avatar, setAvatar] = useState(null);
-
   const [post, setPost] = useState({
+    id: 0,
     title: "",
     description: "",
     likes: 0,
