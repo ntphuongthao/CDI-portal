@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 import ToolBar from "./ToolBar";
 import { FiMoreHorizontal } from 'react-icons/fi';
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../context/supabaseClient";
 
 const Card = (props) => {
   const [username, setUsername] = useState(null);

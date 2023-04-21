@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Reactions from "./Reactions";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../context/supabaseClient";
 import { FiSend } from 'react-icons/fi';
 import './ToolBar.css';
 

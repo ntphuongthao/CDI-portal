@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { vietnameseWords, chineseWords, japaneseWords, bangladeshWords, koreanWords } from "../vocabulary";
+import { vietnameseWords, chineseWords, japaneseWords, bangladeshWords, koreanWords } from "../../server/vocabulary";
 import VocabWord from "./VocabWord";
 import './FlashCard.css';
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../context/supabaseClient';
 import './Avatar.css';
 import { AiFillCamera } from 'react-icons/ai'; 
 

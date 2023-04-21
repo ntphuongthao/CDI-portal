@@ -1,7 +1,7 @@
 import Calendar from 'react-calendar';
 import { useEffect, useState } from 'react';
 import './CustomCalendar.css';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../context/supabaseClient';
 import EventCard from './EventCard';
 
 const CustomCalendar = () => {

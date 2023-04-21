@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import Card from "../components/Card";
+import Card from "../components/post/Card";
 import './Home.css';
 
 const Home = (props) => {

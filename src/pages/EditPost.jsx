@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../context/supabaseClient';
 import './EditPost.css';
 
 const EditPost = (props) => {

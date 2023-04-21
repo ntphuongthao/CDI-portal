@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { trivia } from "../countries";
+import { trivia } from "../../server/countries";
 import './TriviaCards.css';
 import { VscDebugRestart } from 'react-icons/vsc';
 import Confetti from "./Confetti";

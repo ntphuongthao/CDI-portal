@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./EventCard.css";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../context/supabaseClient";
 import { IoMdRemoveCircleOutline } from 'react-icons/io';
 import { useParams } from "react-router-dom";
 

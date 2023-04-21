@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../context/supabaseClient';
 import Avatar from './Avatar';
 import './Account.css';
 
