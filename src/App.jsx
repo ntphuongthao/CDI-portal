@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import { Routes, Route, Link } from "react-router-dom";
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from './context/supabaseClient';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';

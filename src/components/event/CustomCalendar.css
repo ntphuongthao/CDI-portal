@@ -30,3 +30,12 @@
 .current-date {
   background-color: #e1ad01;
 }
+
+.calendar-eventBtn {
+  background-color: white;
+  color: black;
+}
+
+.calendar-eventBtn:hover {
+  border: 2px solid black;
+}

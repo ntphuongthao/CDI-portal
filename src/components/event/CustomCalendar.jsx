@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './CustomCalendar.css';
 import { supabase } from '../../context/supabaseClient';
 import EventCard from './EventCard';
+import { Link } from "react-router-dom";
 
 const CustomCalendar = () => {
   const [date, setDate] = useState(new Date());
@@ -64,6 +65,9 @@ const CustomCalendar = () => {
           All Events
           <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
         </h1>
+        <div className='container'>
+          <button className='calendar-eventBtn'><Link style={{color: 'black'}} to='/new-event'>Add an event!</Link></button>
+        </div>
         <div>
           {events && events.map((event) => (
             <EventCard key={event.created_at} event={event} whiteBorder={false} />
