@@ -25,7 +25,6 @@ const ToolBar = (props) => {
     let { data: allComments, error } = await supabase
       .from('Comments')
       .select("*")
-      .eq('user_id', props.userId)
       .eq('post_id', props.post.id);
 
     if (error) {

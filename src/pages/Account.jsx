@@ -67,7 +67,7 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="container addMarginTop">
+    <div className="container">
       <div className="account-setting-container container">
         <h2 className='title'>Edit Your Profile!</h2>
         <form onSubmit={updateProfile} className="container">
