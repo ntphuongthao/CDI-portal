@@ -3,7 +3,7 @@ import { trivia } from "../../server/countries";
 import './TriviaCards.css';
 import { VscDebugRestart } from 'react-icons/vsc';
 import Confetti from "./Confetti";
-import { AiOutlineQuestionCircle } from 'react-icons/ai';
+import { AiOutlineQuestionCircle, AiOutlineWarning} from 'react-icons/ai';
 
 const TriviaCards = () => {
   const countries = trivia.map(item => Object.keys(item)[0]);
@@ -108,7 +108,7 @@ const TriviaCards = () => {
         setErrors(null);
         setCorrect(true);
       }
-      if (selectedOptions.includes(flag)) {
+      else if (selectedOptions.includes(flag)) {
         setErrors(`You should reselect the food picture of ${country}.`);
       }
       else if (selectedOptions.includes(food)) {
@@ -117,7 +117,6 @@ const TriviaCards = () => {
       else {
         setErrors(`None of your current selections are correct :(.`)
       }
-      return;
     }
   }
   
@@ -152,7 +151,9 @@ const TriviaCards = () => {
         restartTriviaGame={restartTriviaGame}
       />
       {errors && (
-        <p style={{color: 'black'}}>{errors}</p>
+        <p className="flex warning-banner">
+          <AiOutlineWarning size={25}/> {errors}
+        </p>
       )}
       {correct && (
         <div className="fun-fact">

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { GrFormNextLink } from "react-icons/gr";
 
-
 const canvasStyles = {
   position: "fixed",
   pointerEvents: "none",
