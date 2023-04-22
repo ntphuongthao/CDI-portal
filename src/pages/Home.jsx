@@ -34,13 +34,13 @@ const Home = (props) => {
       return dateB - dateA;
     });
     setSortedBy("newest");
-    setData(postsSorted);
+    setFilteredData(postsSorted);
   }
 
   const handleOrderPopular = () => {
     const postsSorted = [...data].sort((a, b) => b.likes - a.likes);
     setSortedBy("popularity");
-    setData(postsSorted);
+    setFilteredData(postsSorted);
   }
 
   return (
