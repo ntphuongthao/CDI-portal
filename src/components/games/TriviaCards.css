@@ -45,3 +45,21 @@
   color: black;
   padding: 1rem;
 }
+
+.submitAnsBtn {
+  background-color: #ccc;
+  color: black;
+}
+
+.submitAnsBtn:hover {
+  border: 2px solid black;
+}
+
+.nextBtn {
+  background-color: #e1ad01;
+  color: black;
+}
+
+.nextBtn:hover {
+  border: 2px solid black;
+}

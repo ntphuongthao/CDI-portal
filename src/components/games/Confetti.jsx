@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
+import { GrFormNextLink } from "react-icons/gr";
+
 
 const canvasStyles = {
   position: "fixed",
@@ -10,7 +12,7 @@ const canvasStyles = {
   left: 350
 };
 
-export default function Confetti({ correct, handleSubmit }) {
+export default function Confetti({ correct, handleSubmit, restartTriviaGame }) {
   const refAnimationInstance = useRef(null);
 
   useEffect(() => {
@@ -66,8 +68,11 @@ export default function Confetti({ correct, handleSubmit }) {
 
   return (
     <>
-      <button onClick={handleClick} style={{margin: '1rem'}}>Submit your answer</button>
-      <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+      <div className="flex" style={{margin: '1rem'}}>
+        <button className="submitAnsBtn" onClick={handleClick}>Submit your answer</button>
+        {correct && (<button onClick={restartTriviaGame} className="nextBtn" style={{background: "#e1ad01"}}>Next <GrFormNextLink /></button>)}
+        <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+      </div>
     </>
   );
 }

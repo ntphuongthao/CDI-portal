@@ -16,6 +16,7 @@ const TriviaCards = () => {
   const [displayedOptions, setDisplayedOptions] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [correct, setCorrect] = useState(false);
+  const [errors, setErrors] = useState(null);
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * countries.length);
@@ -54,6 +55,11 @@ const TriviaCards = () => {
     }
   }, [flag, food, foodUrls, flagUrls, foodDescription]);
 
+  useEffect(() => {
+    // Implement behaviours if not guessing correctly
+
+  }, [correct]);
+
   const restartTriviaGame = () => {
     const randomCountry = countries[generateRandomNumber()];
     setSelectedOptions([]);
@@ -62,6 +68,7 @@ const TriviaCards = () => {
   }
 
   const handleSelectOption = (e) => {
+    setErrors(null);
     const url = new URL(e.target.src);
     const pathname = `.${url.pathname}`;
 
@@ -80,10 +87,37 @@ const TriviaCards = () => {
   }
 
   const handleSubmit = () => {
+    if (selectedOptions.length === 0) {
+      setErrors(`Select 2 pictures that you think represent ${country}.`);
+    }
+    if (selectedOptions.length === 1) {
+      if (selectedOptions.includes(flag)) {
+        setErrors(`You should select one more food picture of ${country}.`);
+      }
+      else if (selectedOptions.includes(food)) {
+        setErrors(`You should select one more flag picture of ${country}.`);
+      } 
+      else {
+        setErrors(`None of your current selections are correct :(.`)
+      }
+      return;
+    }
+
     if (selectedOptions.length === 2) {
       if (selectedOptions.includes(flag) && selectedOptions.includes(food)) {
+        setErrors(null);
         setCorrect(true);
       }
+      if (selectedOptions.includes(flag)) {
+        setErrors(`You should reselect the food picture of ${country}.`);
+      }
+      else if (selectedOptions.includes(food)) {
+        setErrors(`You should reselect the flag picture of ${country}.`);
+      } 
+      else {
+        setErrors(`None of your current selections are correct :(.`)
+      }
+      return;
     }
   }
   
@@ -92,7 +126,11 @@ const TriviaCards = () => {
       <button className="flex trivia-restartBtn" onClick={restartTriviaGame}>
         Restart <VscDebugRestart />
       </button>
-      <p className="trivia-question container">Can you determine which two of the images shown below depict <b>{country}</b> cuisine and national flag?</p>
+      <p className="trivia-question container">
+        Can you determine which two of the images shown below depict 
+        <b>{country}</b>
+         cuisine and national flag?
+      </p>
       <div className="trivia-options-container">
         {displayedOptions && (
           displayedOptions.map((option) => (
@@ -108,7 +146,14 @@ const TriviaCards = () => {
           ))
         )}
       </div>
-      <Confetti correct={correct} handleSubmit={handleSubmit}/>
+      <Confetti
+        correct={correct}
+        handleSubmit={handleSubmit}
+        restartTriviaGame={restartTriviaGame}
+      />
+      {errors && (
+        <p style={{color: 'black'}}>{errors}</p>
+      )}
       {correct && (
         <div className="fun-fact">
           <h2 className="correct">Correct!!!</h2>
