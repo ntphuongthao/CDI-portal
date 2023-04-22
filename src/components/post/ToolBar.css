@@ -18,12 +18,20 @@
 .comments-box {
   min-height: 180px;
   border: 2px solid #c6c6d0;
-  border-radius: 5px;
+  border-radius: 8px;
   margin: 12px;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.comments-box-content {
+  background-color: #E5E4E2;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .comment-writing {

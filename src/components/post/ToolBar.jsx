@@ -12,6 +12,7 @@ const ToolBar = (props) => {
   const [change, setChange] = useState(false);
   const [profiles, setProfiles] = useState(null);
 
+
   useEffect(() => {
     setPost(props.post);
   }, [props]);
@@ -112,13 +113,14 @@ const ToolBar = (props) => {
     if (data) console.log(data);
 
     setComment("");
+    // window.location = '/';
   }
 
   return (
     <div className="toolBar-container">
       {displayComments && (
         <div className="comments-box">
-          <div>
+          <div className="comments-box-content">
             {allComments && (
               allComments.map((comment) => {
                 const username = comment.username;
@@ -130,7 +132,7 @@ const ToolBar = (props) => {
                     style={{color: 'black', justifyContent: 'flex-start'}}
                     key={comment.id}
                   >
-                    <b><u>{username}:</u></b>
+                    <b style={{width: '100px'}}><u>{username}:</u></b>
                     <div>{content}</div>
                   </div>
               )})
