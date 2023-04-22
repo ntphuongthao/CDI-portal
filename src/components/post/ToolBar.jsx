@@ -123,7 +123,7 @@ const ToolBar = (props) => {
               allComments.map((comment) => {
                 const username = comment.username;
                 const content = comment.content;
-                const avater = comment.avatar_url; // This will be implemented later!
+                const avatar = comment.avatar_url; // This will be implemented later!
                 return (
                   <div
                     className="flex"
@@ -137,6 +137,16 @@ const ToolBar = (props) => {
             )}
           </div>
           <form onSubmit={handleSubmitComment} className="flex comment-writing">
+            <img
+              src={props.avatar}
+              alt="User Avatar"
+              width='45px'
+              height="45px"
+              style={{
+                borderRadius: '50%',
+                border: '2px solid black'
+              }}
+            />
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} style={{marginBottom: 0}}/>
             <button type="submit" className="sendCommentBtn"><FiSend/></button>
           </form>

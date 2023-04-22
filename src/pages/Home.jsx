@@ -70,7 +70,10 @@ const Home = (props) => {
       <h1 className="title">Dashboard</h1>
       {filteredData && filteredData.length > 0 ? (filteredData.map((post) => (
         <div key={post.id}>
-          <Card post={post} userId={userId}/>
+          <Card
+            post={post}
+            userId={userId}
+          />
           <br /><br />
         </div>
       ))) : (<h4>There are currently no posts available</h4>)}

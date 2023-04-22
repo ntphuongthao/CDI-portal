@@ -92,7 +92,7 @@ const Card = (props) => {
         <p>{post.description}</p>
         {post.image && <img className="content-img" src={post.image} alt="Some image" width="350px"/>}
       </div>
-      <ToolBar post={post} userId={props.userId}/>
+      <ToolBar post={post} userId={props.userId} avatar={avatar} />
     </div>
   );
 }
