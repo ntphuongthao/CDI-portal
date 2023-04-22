@@ -61,6 +61,7 @@ function RealTimeChat({ session }) {
         return;
       }
 
+      console.log(789, data);
       setMessages(data);
     }
   }
@@ -75,10 +76,11 @@ function RealTimeChat({ session }) {
       return;
     }
 
-    const { error} = await supabase.from("messages").insert({
+    const { error} = await supabase.from("messages").insert([{
       message: newMessage.trim(),
+      user_id: userId,
       created_at: new Date().toISOString(),
-    });
+    }]);
 
     if (error) return;
     setNewMessage("");
@@ -90,9 +92,24 @@ function RealTimeChat({ session }) {
       <div className="container chat-container flex">
         <h1 style={{color: 'black'}}>Open Chat</h1>
         <ul className="chatbox flex">
-          {messages.map((message) => (
-            <li className="chatbox-message" key={message.id}>{message.message}</li>
-          ))}
+          {messages.map((message) => {
+            if (message.user_id === userId) {
+              return (
+                <div className="container" style={{alignItems: 'flex-end'}}>
+                  <p className="username-title">{username}</p>
+                  <li className="current-user-message" key={message.id}>{message.message}</li>
+                </div>
+              )
+            }
+            else {
+              return (
+                <div className="container edit-flex" style={{alignItems: 'flex-end'}}>
+                  {/* <p className="username-title">{username}</p> */}
+                  <li className="other-message" key={message.id}>{message.message}</li>
+                </div>
+              )
+            }
+          })}
         </ul>
         <form className="flex" onSubmit={handleNewMessageSubmit}>
           <input

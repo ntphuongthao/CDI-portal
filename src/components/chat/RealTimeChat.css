@@ -1,5 +1,5 @@
 .chat-container {
-  width: 40%; 
+  width: 35%; 
   padding: 0;
   padding: 2rem;
   border-radius: 8px;
@@ -9,16 +9,46 @@
 .chatbox {
   color: black;
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   flex-direction: column;
   align-items: flex-end;
   gap: 0;
   height: auto;
-  min-height: 300px;
+  min-height: 450px;
 }
 
-.chatbox-message {
+.edit-flex {
+  align-self: flex-start;
+}
+
+
+.other-message {
+  padding: 8px;
+  border: 8px;
+  color: black;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.other-message::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  background-color: white;
+  bottom: 0px;
+  left: -8px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.username-title {
+  font-size: 12px;
+}
+
+.current-user-message {
   padding: 8px;
   border: 8px;
   color: white;
@@ -28,7 +58,7 @@
   position: relative;
 }
 
-.chatbox-message::after {
+.current-user-message::after {
   content: "";
   height: 1rem;
   width: 1rem;
