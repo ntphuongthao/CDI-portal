@@ -33,23 +33,25 @@ const CreatePost = ({ session }) => {
   }
 
   return (
-    <div className="edit addMarginTop">
-      <h2 className="title">Create your new Post!</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label><br/>
-        <input type="text" name="title" value={post.title} onChange={handleChange} /><br/><br/>
+    <div className="edit">
+      <div className="container create-post-container">
+        <h2 className="title">Create your new Post!</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">Title</label><br/>
+          <input type="text" name="title" value={post.title} onChange={handleChange} /><br/><br/>
 
-        <label htmlFor="description">Description</label><br/>
-        <input type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+          <label htmlFor="description">Description</label><br/>
+          <input type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
 
-        <label htmlFor="image">Image</label><br/>
-        <input type="text" name="image" value={post.image} onChange={handleChange} /><br/><br/>
+          <label htmlFor="image">Image</label><br/>
+          <input type="text" name="image" value={post.image} onChange={handleChange} /><br/><br/>
 
-        <div className="flex">
-          <button type="submit">Create Post</button>
-          <button className="cancelBtn" type="submit" onClick={handleCancel}>Cancel</button>
-        </div>
-      </form>
+          <div className="flex">
+            <button type="submit">Create Post</button>
+            <button className="cancelBtn" type="submit" onClick={handleCancel}>Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

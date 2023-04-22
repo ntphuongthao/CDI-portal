@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 form {
@@ -25,4 +26,13 @@ form input {
 
 .cancelBtn:hover {
   border-color: white;
+}
+
+.create-post-container {
+  background-color: white;
+  color: black;
+  width: 40%;
+  padding: 1.5rem;
+  border-top: 4px solid #e1ad01;
+  border-bottom: 4px solid #e1ad01;
 }

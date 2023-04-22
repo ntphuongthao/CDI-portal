@@ -12,3 +12,12 @@ input[type="date"] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+
+.create-event-container {
+  background-color: white;
+  color: black;
+  width: 40%;
+  padding: 1.5rem;
+  border-top: 4px solid #e1ad01;
+  border-bottom: 4px solid #e1ad01;
+}

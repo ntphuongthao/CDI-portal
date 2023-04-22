@@ -31,23 +31,25 @@ const CreateEvent = ({ session }) => {
   }
 
   return (
-    <div className="edit addMarginTop">
-      <h2 className="title">Create your new Event!</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label><br/>
-        <input type="text" name="title" value={event.title} onChange={handleChange} /><br/><br/>
+    <div className="edit">
+      <div className="container create-event-container">
+        <h2 className="title">Create your new Event!</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">Title</label><br/>
+          <input type="text" name="title" value={event.title} onChange={handleChange} /><br/><br/>
 
-        <label htmlFor="description">Description</label><br/>
-        <input type="text" name="description" value={event.description} onChange={handleChange} /><br/><br/>
+          <label htmlFor="description">Description</label><br/>
+          <input type="text" name="description" value={event.description} onChange={handleChange} /><br/><br/>
 
-        <label htmlFor="date">Date</label><br/>
-        <input type="date" name="date" value={event.date} onChange={handleChange} /><br/><br/>
+          <label htmlFor="date">Date</label><br/>
+          <input type="date" name="date" value={event.date} onChange={handleChange} /><br/><br/>
 
-        <div className="flex">
-          <button type="submit">Create Event</button>
-          <button className="cancelBtn" type="submit" onClick={handleCancel}>Cancel</button>
-        </div>
-      </form>
+          <div className="flex">
+            <button type="submit">Create Event</button>
+            <button className="cancelBtn" type="submit" onClick={handleCancel}>Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
