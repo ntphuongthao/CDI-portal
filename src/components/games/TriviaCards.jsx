@@ -65,6 +65,7 @@ const TriviaCards = () => {
     setSelectedOptions([]);
     setCountry(randomCountry);
     setCorrect(false);
+    setErrors(null);
   }
 
   const handleSelectOption = (e) => {
