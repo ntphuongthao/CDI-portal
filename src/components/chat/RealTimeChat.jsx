@@ -88,9 +88,10 @@ function RealTimeChat({ session }) {
   return (
     <div className="flex addMarginTop">
       <div className="container chat-container flex">
+        <h1 style={{color: 'black'}}>Open Chat</h1>
         <ul className="chatbox flex">
           {messages.map((message) => (
-            <li key={message.id}>{message.message}</li>
+            <li className="chatbox-message" key={message.id}>{message.message}</li>
           ))}
         </ul>
         <form className="flex" onSubmit={handleNewMessageSubmit}>
@@ -99,6 +100,9 @@ function RealTimeChat({ session }) {
             placeholder="Type a message..."
             value={newMessage}
             onChange={handleNewMessageChange}
+            style={{
+              margin: 0
+            }}
           />
           <button type="submit">Send</button>
         </form>

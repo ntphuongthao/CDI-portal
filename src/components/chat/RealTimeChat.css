@@ -1,10 +1,12 @@
 .chat-container {
-  width: 50%; 
+  width: 40%; 
   padding: 0;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #FFD700;
 }
 
 .chatbox {
-  background-color: white;
   color: black;
   width: 100%;
   padding: 10px;
@@ -14,4 +16,24 @@
   gap: 0;
   height: auto;
   min-height: 300px;
+}
+
+.chatbox-message {
+  padding: 8px;
+  border: 8px;
+  color: white;
+  background-color: black;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.chatbox-message::after {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  background-color: black;
+  bottom: 0px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
