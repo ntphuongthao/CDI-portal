@@ -10,6 +10,7 @@ const ToolBar = (props) => {
   const [comment, setComment] = useState("");
   const [allComments, setAllComments] = useState([]);
   const [change, setChange] = useState(false);
+  const [profiles, setProfiles] = useState(null);
 
   useEffect(() => {
     setPost(props.post);
@@ -31,8 +32,39 @@ const ToolBar = (props) => {
       return;
     }
 
+    const profiles = await getProfiles();
+    setProfiles(profiles);
     setAllComments(allComments);
   }
+
+  useEffect(() => {
+    if (profiles) {
+      const commentsWithUsernames = allComments.map((comment) => {
+        const username = profiles[comment.user_id]?.username || '';
+        const avatar_url = profiles[comment.user_id]?.avatar_url || '';
+        return { ...comment, username, avatar_url };
+      });
+      setAllComments(commentsWithUsernames);
+    }
+  }, [profiles]);
+
+  const getProfiles = async () => {
+    let { data: profiles, error } = await supabase
+      .from('profiles')
+      .select('id, username, avatar_url');
+
+    if (error) {
+      alert(error.message);
+      return {};
+    }
+
+    const profilesById = {};
+    profiles.forEach((profile) => {
+      profilesById[profile.id] = profile;
+    });
+  
+    return profilesById;
+  };
 
   useEffect(() => {
     const updatePost = async () => {
@@ -88,9 +120,20 @@ const ToolBar = (props) => {
         <div className="comments-box">
           <div>
             {allComments && (
-              allComments.map((comment) => (
-                <div style={{color: 'black'}} key={comment.id} >{comment.content}</div>
-              ))
+              allComments.map((comment) => {
+                const username = comment.username;
+                const content = comment.content;
+                const avater = comment.avatar_url; // This will be implemented later!
+                return (
+                  <div
+                    className="flex"
+                    style={{color: 'black', justifyContent: 'flex-start'}}
+                    key={comment.id}
+                  >
+                    <b><u>{username}:</u></b>
+                    <div>{content}</div>
+                  </div>
+              )})
             )}
           </div>
           <form onSubmit={handleSubmitComment} className="flex comment-writing">
