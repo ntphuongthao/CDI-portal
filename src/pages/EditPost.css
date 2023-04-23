@@ -45,3 +45,8 @@ form input {
   border-top: 4px solid #e1ad01;
   border-bottom: 4px solid #e1ad01;
 }
+
+textarea {
+  color: black;
+  font: inherit;
+}
