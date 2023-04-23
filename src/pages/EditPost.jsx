@@ -59,13 +59,13 @@ const EditPost = (props) => {
         {post && 
           <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
-            <input type="text" placeholder="Add a Title" name="title" value={post.title} onChange={handleChange} /><br/><br/>
+            <input type="text" placeholder="Add a Title" name="title" value={post.title} onChange={handleChange} />
 
             <label htmlFor="description">Description</label><br/>
-            <textarea rows='8' colums='60' type="text" placeholder="Add a Description" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+            <textarea rows='8' colums='60' type="text" placeholder="Add a Description" name="description" value={post.description} onChange={handleChange} />
 
             <label htmlFor="image">Image</label><br/>
-            <input type="text" placeholder="Add Image" name="image" value={post.image} onChange={handleChange} /><br/><br/>
+            <input type="text" placeholder="Add Image" name="image" value={post.image} onChange={handleChange} />
 
             <div className="flex">
               <button type="submit">Edit</button>
