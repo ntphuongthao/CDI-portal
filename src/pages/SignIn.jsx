@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../context/supabaseClient";
+import { AiOutlineMail } from 'react-icons/ai';
+import { RiLockPasswordLine } from 'react-icons/ri';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -25,25 +27,38 @@ const SignIn = () => {
   }
 
   return (
-    <div className="container addMarginTop">
-      <h2>Log into your account</h2>
-      <form onSubmit={signInWithEmail}>
-        {error && 
-          (<div className="errorBanner">
-            {error}
-          </div>)
-        }
-        <label htmlFor="email">Email</label>
-        <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} />
+    <div className="container">
+      <div className="container signUpForm addMarginTop">
+        <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />
+        <h2>Log in with your account</h2>
+        <form onSubmit={signInWithEmail}>
+          {error && 
+            (<div className="errorBanner">
+              {error}
+            </div>)
+          }
 
-        <label htmlFor="password">Password</label>
-        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} /><br/>
+          <div className="flex">
+            {/* <label htmlFor="email">Email</label> */}
+            <AiOutlineMail size={30} />
+            <input type="text" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
+          </div>
+          
 
-        <div className="flex">
-          <button className="signUpBtn" type="submit">Log In</button>
-        </div>
-      </form>
+          <div className="flex">
+            {/* <label htmlFor="password">Password</label> */}
+            <RiLockPasswordLine size={30} />
+            <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+          </div>
+          
+
+          <div className="flex">
+            <button className="signUpBtn" type="submit">Log In</button>
+          </div>
+        </form>
+      </div>
     </div>
+    
   );
 }
 

@@ -5,3 +5,18 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
+
+.school-logo {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.signUpForm {
+  margin: 2rem;
+  background-color: white;
+  width: 40%;
+  color: black;
+  padding: 1rem;
+  border-top: 5px solid #e1ad01;
+  border-bottom: 5px solid #e1ad01;
+}
