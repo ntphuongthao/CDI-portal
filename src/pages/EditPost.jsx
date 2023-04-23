@@ -53,25 +53,27 @@ const EditPost = (props) => {
   }, [data]);
 
   return (
-    <div className='edit'>
-      <h2 className='title'>Edit your Post here...</h2>
-      {post && 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Title</label><br/>
-          <input type="text" name="title" value={post.title} onChange={handleChange} /><br/><br/>
+    <div className='edit container'>
+      <div className="container edit-post-container">
+        <h2 className='title'>Edit your post here...</h2>
+        {post && 
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="title">Title</label>
+            <input type="text" placeholder="Add a Title" name="title" value={post.title} onChange={handleChange} /><br/><br/>
 
-          <label htmlFor="description">Description</label><br/>
-          <input type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+            <label htmlFor="description">Description</label><br/>
+            <textarea rows='8' colums='60' type="text" placeholder="Add a Description" name="description" value={post.description} onChange={handleChange} /><br/><br/>
 
-          <label htmlFor="image">Image</label><br/>
-          <input type="text" name="image" value={post.image} onChange={handleChange} /><br/><br/>
+            <label htmlFor="image">Image</label><br/>
+            <input type="text" placeholder="Add Image" name="image" value={post.image} onChange={handleChange} /><br/><br/>
 
-          <div className="flex">
-            <button type="submit">Edit</button>
-            <button className="deleteBtn" onClick={handleDelete}>Delete</button>
-          </div>
-        </form>
-      }
+            <div className="flex">
+              <button type="submit">Edit</button>
+              <button className="deleteBtn" onClick={handleDelete}>Delete</button>
+            </div>
+          </form>
+        }
+      </div>
     </div>
   );
 }

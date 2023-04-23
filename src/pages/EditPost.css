@@ -3,6 +3,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.edit-post-container {
+  width: 40%;
+  color: black;
+  background-color: white;
+  border-top: 4px solid #e1ad01;
+  border-bottom: 4px solid #e1ad01;
+  padding: 12px;
   margin-top: 2rem;
 }
 
