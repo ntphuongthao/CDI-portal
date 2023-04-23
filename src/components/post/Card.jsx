@@ -116,7 +116,7 @@ const Card = (props) => {
         </div>
 
         <button className="expand-card">
-          <Link to={`/view-post/${post.id}`} style={{color: "black"}}>
+          <Link to={`/edit/${post.id}`} style={{color: "black"}}>
             <FiMoreHorizontal />
           </Link>
         </button>
