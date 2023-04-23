@@ -8,6 +8,7 @@ import { supabase } from "../../context/supabaseClient";
 const Card = (props) => {
   const [username, setUsername] = useState(null);
   const [avatar, setAvatar] = useState(null);
+  const [currentAvatar, setCurrentAvatar] = useState(null);
   const [post, setPost] = useState({
     id: 0,
     title: "",
@@ -24,8 +25,7 @@ const Card = (props) => {
   }, [props, avatar]);
 
   useEffect(() => {
-    async function getProfile() {
-
+    async function getPostProfile() {
       let { data, error } = await supabase
         .from('profiles')
         .select(`username, website, avatar_url`)
@@ -40,8 +40,41 @@ const Card = (props) => {
       }
     }
 
-    getProfile();
+    async function getCurrentProfile() {
+      let { data, error } = await supabase
+        .from('profiles')
+        .select(`username, website, avatar_url`)
+        .eq('id', props.currentUser.id)
+        .single();
+
+      if (error) {
+        return;
+      } else if (data) {
+        setCurrentAvatar(data.avatar_url);
+      }
+    }
+
+    getPostProfile();
+    getCurrentProfile();
   }, []);
+
+  useEffect(() => {
+    if (currentAvatar) {
+      async function downloadCurrentImage(path) {
+        try {
+          const { data, error } = await supabase.storage.from('avatars').download(path);
+          if (error) {
+            throw error;
+          }
+          const url = URL.createObjectURL(data);
+          setCurrentAvatar(url);
+        } catch (error) {
+          console.log('Error downloading image: ', error.message);
+        }
+      }
+      downloadCurrentImage(currentAvatar);
+    }
+  }, [currentAvatar]);
 
   async function downloadImage(path) {
     try {
@@ -92,7 +125,7 @@ const Card = (props) => {
         <p>{post.description}</p>
         {post.image && <img className="content-img" src={post.image} alt="Some image" width="350px"/>}
       </div>
-      <ToolBar post={post} userId={props.userId} avatar={avatar} />
+      <ToolBar post={post} userId={props.userId} avatar={currentAvatar}/>
     </div>
   );
 }

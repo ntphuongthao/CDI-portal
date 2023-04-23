@@ -73,6 +73,7 @@ const Home = (props) => {
           <Card
             post={post}
             userId={userId}
+            currentUser={props.session.user}
           />
           <br /><br />
         </div>
