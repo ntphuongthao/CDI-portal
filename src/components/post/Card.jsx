@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Card.css";
 import ToolBar from "./ToolBar";
 import { FiMoreHorizontal } from 'react-icons/fi';
@@ -116,7 +116,7 @@ const Card = (props) => {
         </div>
 
         <button className="expand-card">
-          <Link to={`/edit/${post.id}`} style={{color: "black"}}>
+          <Link to={`/view-post/${post.id}`} style={{color: "black"}}>
             <FiMoreHorizontal />
           </Link>
         </button>

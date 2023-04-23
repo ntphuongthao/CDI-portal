@@ -17,6 +17,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiOutlineUser } from 'react-icons/ai';
 import Users from './pages/Users';
+import ViewPost from './components/post/ViewPost';
 
 function App() {
   const [data, setData] = useState([]);
@@ -137,13 +138,14 @@ function App() {
             <Route path='/new-post' element={<CreatePost session={session} />} />
             <Route path='/new-event' element={<CreateEvent session={session} />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
+            <Route path='/view-post/:id' element={<ViewPost />} />
             <Route path='/calendar' element={<CustomCalendar />} />
             <Route path='/games' element={<Games />} />
             <Route path='/chat' element={<RealTimeChat session={session} />} />
             <Route path='/account' element={<Account session={session} />} />
             <Route path='/users' element={<Users />} />
-          </Routes>) : 
-        (
+          </Routes>
+        ) : (
           <Routes>
             <Route path='/sign-up' element={<SignUp />} />
             <Route path='/sign-in' element={<SignIn />} />
