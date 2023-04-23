@@ -89,28 +89,28 @@ function RealTimeChat({ session }) {
 
   return (
     <div className="flex addMarginTop">
-      <div className="container chat-container flex">
+      <div className="container chat-container">
         <h1 style={{color: 'black'}}>Open Chat</h1>
-        <ul className="chatbox flex">
+        <div className="chatbox">
           {messages.map((message) => {
             if (message.user_id === userId) {
               return (
                 <div className="container" style={{alignItems: 'flex-end'}}>
                   <p className="username-title">{username}</p>
-                  <li className="current-user-message" key={message.id}>{message.message}</li>
+                  <div className="current-user-message" key={message.id}>{message.message}</div>
                 </div>
               )
             }
             else {
               return (
-                <div className="container edit-flex" style={{alignItems: 'flex-end'}}>
+                <div className="container edit-flex" style={{alignItems: 'flex-start'}}>
                   {/* <p className="username-title">{username}</p> */}
-                  <li className="other-message" key={message.id}>{message.message}</li>
+                  <div className="other-message" key={message.id}>{message.message}</div>
                 </div>
               )
             }
           })}
-        </ul>
+        </div>
         <form className="flex" onSubmit={handleNewMessageSubmit}>
           <input
             type="text"
