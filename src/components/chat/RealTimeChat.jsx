@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { supabase } from "../../context/supabaseClient";
 import './RealTimeChat.css';
 
 function RealTimeChat({ session }) {
+  const scrollRef = useRef();
   const userId = session.user.id;
   let mySubscription = null;
   const [messages, setMessages] = useState([]);
@@ -30,6 +31,10 @@ function RealTimeChat({ session }) {
     getMessagesAndSubscribe();
   }, []);
 
+  useEffect(() => {
+    scrollRef.current.scrollIntoView();
+  }, [messages, newMessage]);
+
   const getMessagesAndSubscribe = () => {
     if (!mySubscription) {
       getInitialMessages();
@@ -39,7 +44,7 @@ function RealTimeChat({ session }) {
           'postgres_changes', 
           { event: 'INSERT', schema: 'public', table: 'messages' },
           (payload) => {
-            console.log('Change received!', payload)
+            console.log('Change received!', payload);
           }
         )
         .subscribe();
@@ -61,9 +66,9 @@ function RealTimeChat({ session }) {
         return;
       }
 
-      console.log(789, data);
       setMessages(data);
     }
+    scrollRef.current.scrollIntoView();
   }
 
   const handleNewMessageChange = (event) => {
@@ -85,17 +90,21 @@ function RealTimeChat({ session }) {
     if (error) return;
     setNewMessage("");
     window.location = '/chat';
+    scrollRef.current.scrollIntoView();
   };
 
   return (
     <div className="flex addMarginTop">
       <div className="container chat-container">
         <h1 style={{color: 'black'}}>Open Chat</h1>
-        <div className="chatbox">
+        <div
+          className="chatbox"
+          id="chat-box"
+        >
           {messages.map((message) => {
             if (message.user_id === userId) {
               return (
-                <div className="container" style={{alignItems: 'flex-end'}}>
+                <div key={message.id} className="container" style={{alignItems: 'flex-end'}}>
                   <p className="username-title">{username}</p>
                   <div className="current-user-message" key={message.id}>{message.message}</div>
                 </div>
@@ -103,13 +112,14 @@ function RealTimeChat({ session }) {
             }
             else {
               return (
-                <div className="container edit-flex" style={{alignItems: 'flex-start'}}>
+                <div key={message.id} className="container edit-flex" style={{alignItems: 'flex-start'}}>
                   {/* <p className="username-title">{username}</p> */}
                   <div className="other-message" key={message.id}>{message.message}</div>
                 </div>
               )
             }
           })}
+          <div ref={scrollRef} />
         </div>
         <form className="flex" onSubmit={handleNewMessageSubmit}>
           <input
