@@ -117,7 +117,7 @@ function RealTimeChat({ session }) {
     <div className="flex addMarginTop">
       <div className="container chat-container">
         <div className="flex" style={{paddingTop: 0}}>
-          <h1 style={{color: 'black'}}>Open Chat</h1>
+          <h1 style={{color: 'black'}}>Alumni Chat</h1>
           <img src="./depauw-remove-background.png" alt="" width="50px" />
         </div>
         <div
