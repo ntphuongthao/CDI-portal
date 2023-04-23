@@ -62,7 +62,7 @@ const EditPost = (props) => {
             <input type="text" placeholder="Add a Title" name="title" value={post.title} onChange={handleChange} /><br/><br/>
 
             <label htmlFor="description">Description</label><br/>
-            <input type="text" placeholder="Add a Description" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+            <textarea rows='8' colums='60' type="text" placeholder="Add a Description" name="description" value={post.description} onChange={handleChange} /><br/><br/>
 
             <label htmlFor="image">Image</label><br/>
             <input type="text" placeholder="Add Image" name="image" value={post.image} onChange={handleChange} /><br/><br/>
