@@ -1,0 +1,10 @@
+.user-card {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  width: 500px;
+  justify-content: flex-start;
+  gap: 1rem;
+}

@@ -14,8 +14,9 @@ import Games from './components/games/Games';
 import Account from './pages/Account';
 import RealTimeChat from './components/chat/RealTimeChat';
 import { FaSignOutAlt } from 'react-icons/fa';
-import { RiAccountCircleFill } from 'react-icons/ri';
 import { IoMdAddCircleOutline } from 'react-icons/io';
+import { AiOutlineUser } from 'react-icons/ai';
+import Users from './pages/Users';
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,6 +25,7 @@ function App() {
   const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
   
   useEffect(() => {
     const fetchData = async () => {
@@ -77,6 +79,10 @@ function App() {
     window.location = '/';
   }
 
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+  }
+
   return (
     <>
       <nav className='flex' style={{justifyContent: "space-between", padding: "0"}}>
@@ -87,6 +93,7 @@ function App() {
           {session && (
             <>
               <li><Link to='/'>Dashboard</Link></li> | 
+              <li><Link to='/users'> All Users</Link></li> |
               <li><Link to='/calendar'>Ongoing events</Link></li> | 
               <li><Link to='/games'>Games</Link></li> | 
               <li><Link to="/chat">Get connected!</Link></li> 
@@ -96,7 +103,7 @@ function App() {
         <ul className='flex nav-links'>
           {session &&
             (<>
-              <li className='nav-icon'><Link to='/account'><RiAccountCircleFill /> {username ? username: "Anonymous"}</Link></li> | 
+              <li className='nav-icon'><Link to='/account'><AiOutlineUser /> {username ? username: "Anonymous"}</Link></li> | 
               <li className='nav-icon' onClick={handleSignOut}>Sign Out <FaSignOutAlt /></li> 
             </>)
           }
@@ -134,6 +141,7 @@ function App() {
             <Route path='/games' element={<Games />} />
             <Route path='/chat' element={<RealTimeChat session={session} />} />
             <Route path='/account' element={<Account session={session} />} />
+            <Route path='/users' element={<Users />} />
           </Routes>) : 
         (
           <Routes>
