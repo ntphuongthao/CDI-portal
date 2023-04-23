@@ -49,11 +49,11 @@ nav {
   width: 50px;
   height: 45px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .dropdown-list {
-  width: 100px;
-
+  width: 120px;
 }
 
 li.dropdown {
@@ -77,16 +77,27 @@ li.dropdown ul {
 
 li.dropdown ul li a {
   display: block;
-  background-color: white;
+  background-color: #e1ad01;
   padding: 8px;
   margin-top: 10px;
   border-radius: 5px;
+  /* border: 2px solid black; */
+  color: black;
+}
+
+li.dropdown ul li a:hover {
+  font-weight: 600;
+  background-color: #c49601;
 }
 
 li.dropdown:hover ul {
   display: block;
 }
 
+li.dropdown ul li {
+  display: flex;
+  justify-content: flex-end;
+}
 
 input[type="text"], input[type="password"], input[type="url"] {
   padding: 10px;
@@ -169,5 +180,5 @@ select:focus {
 
 .nav-icon:hover {
   cursor: pointer;
-  color: black
+  color: black;
 }
