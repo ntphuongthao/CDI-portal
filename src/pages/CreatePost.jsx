@@ -33,18 +33,18 @@ const CreatePost = ({ session }) => {
   }
 
   return (
-    <div className="edit">
+    <div className="edit addMarginTop">
       <div className="container create-post-container">
         <h2 className="title">Create your new Post!</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label><br/>
-          <input type="text" name="title" value={post.title} onChange={handleChange} /><br/><br/>
+          <input type="text" name="title" value={post.title} onChange={handleChange} />
 
           <label htmlFor="description">Description</label><br/>
-          <textarea rows="8" cols="60" type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+          <textarea rows="8" cols="60" type="text" name="description" value={post.description} onChange={handleChange} />
 
           <label htmlFor="image">Image</label><br/>
-          <input type="text" name="image" value={post.image} onChange={handleChange} /><br/><br/>
+          <input type="text" name="image" value={post.image} onChange={handleChange} />
 
           <div className="flex">
             <button type="submit">Create Post</button>

@@ -31,18 +31,18 @@ const CreateEvent = ({ session }) => {
   }
 
   return (
-    <div className="edit">
+    <div className="edit addMarginTop">
       <div className="container create-event-container">
         <h2 className="title">Create your new Event!</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label><br/>
-          <input type="text" name="title" value={event.title} onChange={handleChange} /><br/><br/>
+          <input type="text" name="title" value={event.title} onChange={handleChange} />
 
           <label htmlFor="description">Description</label><br/>
-          <input type="text" name="description" value={event.description} onChange={handleChange} /><br/><br/>
+          <input type="text" name="description" value={event.description} onChange={handleChange} />
 
           <label htmlFor="date">Date</label><br/>
-          <input type="date" name="date" value={event.date} onChange={handleChange} /><br/><br/>
+          <textarea cols='60' rows='8' type="date" name="date" value={event.date} onChange={handleChange} />
 
           <div className="flex">
             <button type="submit">Create Event</button>
