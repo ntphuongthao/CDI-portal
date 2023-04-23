@@ -41,7 +41,7 @@ const CreatePost = ({ session }) => {
           <input type="text" name="title" value={post.title} onChange={handleChange} /><br/><br/>
 
           <label htmlFor="description">Description</label><br/>
-          <input type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
+          <textarea rows="8" cols="60" type="text" name="description" value={post.description} onChange={handleChange} /><br/><br/>
 
           <label htmlFor="image">Image</label><br/>
           <input type="text" name="image" value={post.image} onChange={handleChange} /><br/><br/>

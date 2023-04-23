@@ -98,7 +98,7 @@ li.dropdown ul li {
   justify-content: flex-end;
 }
 
-input[type="text"], input[type="password"], input[type="url"] {
+textarea, input[type="text"], input[type="password"], input[type="url"] {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -110,7 +110,7 @@ input[type="text"], input[type="password"], input[type="url"] {
   margin-bottom: 10px;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus {
+textarea, input[type="text"]:focus, input[type="password"]:focus, input[type="url"]:focus {
   outline: none;
   border-color: #e1ad01;
   box-shadow: 0 0 5px #e1ad01;
