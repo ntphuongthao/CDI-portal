@@ -11,12 +11,17 @@
   margin-top: 1rem;
 }
 
-.signUpForm {
-  margin: 2rem;
+.sign-in-form {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.sign-in-info {
   background-color: white;
-  width: 40%;
   color: black;
   padding: 1rem;
-  border-top: 5px solid #e1ad01;
-  border-bottom: 5px solid #e1ad01;
+}
+
+.depauw-sign-in-logo {
+  width: 600px;
 }
