@@ -10,6 +10,7 @@ function RealTimeChat({ session }) {
   const [newMessage, setNewMessage] = useState("");
   const [username, setUsername] = useState("");
   const [avatar, setAvatar] = useState(null);
+  const [profiles, setProfiles] = useState(null);
 
   useEffect(() => {
     const getProfile = async () => {
@@ -27,7 +28,26 @@ function RealTimeChat({ session }) {
       }
     }
 
+    const getAllProfiles = async () => {
+      let { data: profiles, error } = await supabase
+        .from('profiles')
+        .select('id, username, avatar_url');
+  
+      if (error) {
+        alert(error.message);
+        return {};
+      }
+  
+      const profilesById = {};
+      profiles.forEach((profile) => {
+        profilesById[profile.id] = profile;
+      });
+    
+      setProfiles(profilesById);
+    };
+
     getProfile();
+    getAllProfiles();
     getMessagesAndSubscribe();
   }, []);
 
@@ -101,7 +121,7 @@ function RealTimeChat({ session }) {
           className="chatbox"
           id="chat-box"
         >
-          {messages.map((message) => {
+          {profiles && messages.map((message) => {
             if (message.user_id === userId) {
               return (
                 <div key={message.id} className="container" style={{alignItems: 'flex-end'}}>
@@ -111,9 +131,10 @@ function RealTimeChat({ session }) {
               )
             }
             else {
+              const othername = profiles[message.user_id]?.username || '';
               return (
                 <div key={message.id} className="container edit-flex" style={{alignItems: 'flex-start'}}>
-                  {/* <p className="username-title">{username}</p> */}
+                  <p className="username-title">{othername}</p>
                   <div className="other-message" key={message.id}>{message.message}</div>
                 </div>
               )
