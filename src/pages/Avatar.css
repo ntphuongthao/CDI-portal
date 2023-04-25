@@ -11,20 +11,24 @@
 
 .avatar.no-image {
   background-color: #333;
-  border: 1px solid rgb(200, 200, 200);
+  border: 1px solid rgb(83, 83, 83);
   border-radius: 5px;
 }
 
 .camera-span {
-  background-color: white;
+  background-color: rgb(230, 230, 230);
   color: black;
   padding: 10px;
+  border: 1px solid rgb(180, 180, 180);
   border-radius: 50%;
-  /* position: absolute; */
   width: 45px;
   text-align: center;
   top: 310px;
   left: 970px;
+}
+
+.camera-span:active {
+  background-color: rgb(180, 180, 180);
 }
 
 .camera-flex {
