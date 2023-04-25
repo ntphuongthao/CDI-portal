@@ -23,18 +23,46 @@
   color: black;
 }
 
+.past-event-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.past-event-btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 2px solid #e1ad01;
+  background-color: white;
+  color: black;
+}
+
+.past-event-btn:hover {
+  border: 2px solid #e1ad01;
+}
+
+.current-event-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 2px solid #e1ad01;
+  background-color: white;
+  color: black;
+}
+
+.current-event-btn:hover {
+  border: 2px solid #e1ad01;
+}
+
+.event-highlight {
+  background-color: #e1ad01;
+}
+
 .current-events {
   margin-top: 3rem;
 }
 
 .current-date {
   background-color: #e1ad01;
-}
-
-.event-line {
-  border-bottom: 3px solid black;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .calendar-eventBtn {

@@ -12,6 +12,7 @@ const CustomCalendar = (props) => {
   const [pastEvents, setPastEvents] = useState([]);
   const [displayedEvents, setDisplayedEvents] = useState(null);
   const currentUserId = props.session.user.id;
+  const [displayPast, setDisplayPast] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -52,6 +53,10 @@ const CustomCalendar = (props) => {
     setDisplayedEvents(filteredEvents);
   };
 
+  const handleDisplayPast = (display) => {
+    setDisplayPast(display);
+  }
+
   return (
     <div className='flex' style={{justifyContent: 'space-around', padding: 0, alignItems: 'flex-start'}}>
       <div className="calendar calendar-container">
@@ -77,53 +82,62 @@ const CustomCalendar = (props) => {
       </div>
 
       <div className="all-events-container">
-        <div>
-          <h1 className="flex">
-            Past Events
-            <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
-          </h1>
-          <div>
-            {pastEvents.length === 0 && (
-              <p style={{textAlign: 'center'}}>There are no past events to show!</p>
-            )}
-            {pastEvents && pastEvents.map((event) => (
-              <EventCard
-                key={event.created_at}
-                event={event}
-                whiteBorder={false}
-                currentUserId={currentUserId}
-              />
-            ))}
-          </div>
-          <div className='event-line'/>
+        <div className="past-event-btns">
+          <button className={`past-event-btn ${displayPast ? 'event-highlight': ''}`} onClick={() => handleDisplayPast(true)}>Past</button>
+          <button className={`current-event-btn ${!displayPast ? 'event-highlight': ''}`} onClick={() => handleDisplayPast(false)}>Current</button>
         </div>
-        <div>
-          <h1 className='flex'>
-            Ongoing Events
-            <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
-          </h1>
-          <div className='container'>
-            <button className='calendar-eventBtn'>
-              <Link style={{color: 'black'}} to='/new-event'>Add an event!</Link>
-            </button>
-          </div>
+        <br />
+        {displayPast && (
           <div>
-            {currentEvents.length === 0 && (
-              <>
-                <br />
-                <p style={{textAlign: 'center'}}>There are no current events to show!</p>
-              </>
-            )}
-            {currentEvents && currentEvents.map((event) => (
-              <EventCard
-                key={event.created_at}
-                event={event}
-                whiteBorder={false}
-                currentUserId={currentUserId}
-              />
-            ))}
+            <h1 className="flex">
+              Past Events
+              <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
+            </h1>
+            <div>
+              {pastEvents.length === 0 && (
+                <p style={{textAlign: 'center'}}>There are no past events to show!</p>
+              )}
+              {pastEvents && pastEvents.map((event) => (
+                <EventCard
+                  key={event.created_at}
+                  event={event}
+                  whiteBorder={false}
+                  currentUserId={currentUserId}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {!displayPast && (
+          <div>
+            <h1 className='flex'>
+              Ongoing Events
+              <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
+            </h1>
+            <div className='container'>
+              <button className='calendar-eventBtn'>
+                <Link style={{color: 'black'}} to='/new-event'>Add an event!</Link>
+              </button>
+            </div>
+            <div>
+              {currentEvents.length === 0 && (
+                <>
+                  <br />
+                  <p style={{textAlign: 'center'}}>There are no current events to show!</p>
+                </>
+              )}
+              {currentEvents && currentEvents.map((event) => (
+                <EventCard
+                  key={event.created_at}
+                  event={event}
+                  whiteBorder={false}
+                  currentUserId={currentUserId}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
