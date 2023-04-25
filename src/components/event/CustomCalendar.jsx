@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 const CustomCalendar = (props) => {
   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState(null);
+  const [currentEvents, setCurrentEvents] = useState([]);
+  const [pastEvents, setPastEvents] = useState([]);
   const [displayedEvents, setDisplayedEvents] = useState(null);
   const currentUserId = props.session.user.id;
 
@@ -15,7 +17,20 @@ const CustomCalendar = (props) => {
     const fetchEvents = async () => {
       const { data } = await supabase.from("Events").select();
       setEvents(data);
-      setDisplayedEvents(data);
+
+      const today = new Date()
+      const past = data.filter((event) => {
+        const eventDate = new Date(event.date);
+        return eventDate.getTime() < today.getTime();
+      })
+
+      const future = data.filter((event) => {
+        const eventDate = new Date(event.date);
+        return eventDate.getTime() >= today.getTime();
+      })
+
+      setPastEvents(past);
+      setCurrentEvents(future);
     }
 
     fetchEvents();
@@ -55,31 +70,59 @@ const CustomCalendar = (props) => {
                 ))}
               </ul>
             </>) : (
-              <p>There are no events today!</p>
+              <p className='flex' style={{width: '600px'}}>There are no events today!</p>
             )
           }
         </div>
       </div>
 
       <div className="all-events-container">
-        <h1 className='flex'>
-          All Events
-          <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
-        </h1>
-        <div className='container'>
-          <button className='calendar-eventBtn' style={{background: '#e1ad01'}}>
-            <Link style={{color: 'black'}} to='/new-event'>Add an event!</Link>
-          </button>
+        <div>
+          <h1 className="flex">
+            Past Events
+            <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
+          </h1>
+          <div>
+            {pastEvents.length === 0 && (
+              <p style={{textAlign: 'center'}}>There are no past events to show!</p>
+            )}
+            {pastEvents && pastEvents.map((event) => (
+              <EventCard
+                key={event.created_at}
+                event={event}
+                whiteBorder={false}
+                currentUserId={currentUserId}
+              />
+            ))}
+          </div>
+          <div className='event-line'/>
         </div>
         <div>
-          {events && events.map((event) => (
-            <EventCard
-              key={event.created_at}
-              event={event}
-              whiteBorder={false}
-              currentUserId={currentUserId}
-            />
-          ))}
+          <h1 className='flex'>
+            Ongoing Events
+            <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
+          </h1>
+          <div className='container'>
+            <button className='calendar-eventBtn'>
+              <Link style={{color: 'black'}} to='/new-event'>Add an event!</Link>
+            </button>
+          </div>
+          <div>
+            {currentEvents.length === 0 && (
+              <>
+                <br />
+                <p style={{textAlign: 'center'}}>There are no current events to show!</p>
+              </>
+            )}
+            {currentEvents && currentEvents.map((event) => (
+              <EventCard
+                key={event.created_at}
+                event={event}
+                whiteBorder={false}
+                currentUserId={currentUserId}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

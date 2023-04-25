@@ -31,8 +31,15 @@
   background-color: #e1ad01;
 }
 
+.event-line {
+  border-bottom: 3px solid black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .calendar-eventBtn {
-  background-color: white;
+  background-color: #e1ad01;
+  margin-top: 1rem;
 }
 
 .calendar-eventBtn:hover {

@@ -6,7 +6,7 @@ export const trivia = [
       url: "./food/viet_food.jpeg",
       description: "Goi Cuon is translucent spring rolls packed with greens, coriander, and minced pork or shrimp. A southern variation has barbecued strips of pork wrapped up with a green banana and star fruit and then dunked in a rich peanut sauce.",
     },
-    flag: "./flags/Flag_of_Vietnam.svg.png",
+    flag: "./flags/Flag_of_VietNam.svg.png",
     }
   },
   {
