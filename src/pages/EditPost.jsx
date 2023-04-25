@@ -13,9 +13,15 @@ const EditPost = (props) => {
     dislikes: "",
   });
   const { id } = useParams();
-  
+
   const handleDelete = async () => {
-    await supabase.from('Posts').delete().eq('id', id);
+    const { error } = await supabase.from('Posts').delete().eq('id', parseInt(id));
+
+    if (error) {
+      console.log(123);
+      alert(error.message);
+      return;
+    }
     window.location = '/';
   }
 

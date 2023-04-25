@@ -39,10 +39,10 @@ const CreateEvent = ({ session }) => {
           <input type="text" name="title" value={event.title} onChange={handleChange} />
 
           <label htmlFor="description">Description</label><br/>
-          <input type="text" name="description" value={event.description} onChange={handleChange} />
+          <textarea cols='60' rows='8' type="text" name="description" value={event.description} onChange={handleChange} />
 
           <label htmlFor="date">Date</label><br/>
-          <textarea cols='60' rows='8' type="date" name="date" value={event.date} onChange={handleChange} />
+          <input type="date" name="date" value={event.date} onChange={handleChange} />
 
           <div className="flex">
             <button type="submit">Create Event</button>

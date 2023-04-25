@@ -13,13 +13,13 @@ Then, hit
 ```javascript
 npm run dev
 ```
-and open your [localhost](http://localhost:5174/) to see the application
+and open your [localhost](http://localhost:5173/) to see the application
 
 ## User Authentication
 The CDI Portal provides a robust user authentication system that allows users to sign up for a new account or sign in with an existing one. This system ensures that only authorized users can access the portal's features and content.
 
 ## Posts and Events
-The Portal allows users to create and share posts and events with the entire school community. Users can add details such as date, time, and location to their events, and posts can be categorized by topic or subject.
+The Portal allows users to create and share posts and events with the entire school community. Users can add details such as content, date, and time to their events, and posts can be categorized by topic or subject.
 
 ## Chat with Alumni
 The Portal also provides a chat functionality that allows students to connect and engage with alumni of the school. This feature is a great way to build relationships and learn from those who have gone before.
