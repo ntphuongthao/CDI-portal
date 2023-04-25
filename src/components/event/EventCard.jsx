@@ -3,7 +3,7 @@ import "./EventCard.css";
 import { supabase } from "../../context/supabaseClient";
 import { IoMdRemoveCircleOutline } from 'react-icons/io';
 
-const EventCard = ({ event, whiteBorder }) => {
+const EventCard = ({ event, whiteBorder, currentUserId }) => {
   const [username, setUsername] = useState(null);
   
   const {
@@ -58,7 +58,7 @@ const EventCard = ({ event, whiteBorder }) => {
         <p>Created by: {username}</p>
         <p>{description}</p>
       </div>
-      {!whiteBorder &&
+      {!whiteBorder && currentUserId === event.user_id &&
         <div className="event-removeBtn" onClick={handleDeleteEvent}>
           <IoMdRemoveCircleOutline />
         </div>

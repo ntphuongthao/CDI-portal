@@ -5,10 +5,11 @@ import { supabase } from '../../context/supabaseClient';
 import EventCard from './EventCard';
 import { Link } from "react-router-dom";
 
-const CustomCalendar = () => {
+const CustomCalendar = (props) => {
   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState(null);
   const [displayedEvents, setDisplayedEvents] = useState(null);
+  const currentUserId = props.session.user.id;
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -66,11 +67,18 @@ const CustomCalendar = () => {
           <img src="./depauw-remove-background.png" alt="Depauw Logo" width="50px" />
         </h1>
         <div className='container'>
-          <button className='calendar-eventBtn'><Link style={{color: 'black'}} to='/new-event'>Add an event!</Link></button>
+          <button className='calendar-eventBtn' style={{background: '#e1ad01'}}>
+            <Link style={{color: 'black'}} to='/new-event'>Add an event!</Link>
+          </button>
         </div>
         <div>
           {events && events.map((event) => (
-            <EventCard key={event.created_at} event={event} whiteBorder={false} />
+            <EventCard
+              key={event.created_at}
+              event={event}
+              whiteBorder={false}
+              currentUserId={currentUserId}
+            />
           ))}
         </div>
       </div>

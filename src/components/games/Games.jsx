@@ -31,7 +31,7 @@ const Games = () => {
         </div>
 
         <div className="game-container container">
-          <select className='select-create flashcard-select' value={selectedOption} onChange={handleSelectOption}>
+          <select className='select-create flashcard-select' style={{height: '42px'}} value={selectedOption} onChange={handleSelectOption}>
             <option value="">Select a language</option>
             <option value="vietnamese">Vietnamese</option>
             <option value="chinese">Chinese</option>

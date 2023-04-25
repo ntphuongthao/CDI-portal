@@ -120,6 +120,11 @@ const ToolBar = (props) => {
       {displayComments && (
         <div className="comments-box">
           <div className="comments-box-content">
+            {
+              allComments.length === 0 && (
+                <div className="flex" style={{color: 'black', height: '200px'}}>There are currently no comments.</div>
+              )
+            }
             {allComments && (
               allComments.map((comment) => {
                 const username = comment.username;

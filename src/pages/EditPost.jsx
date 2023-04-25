@@ -18,7 +18,6 @@ const EditPost = (props) => {
     const { error } = await supabase.from('Posts').delete().eq('id', parseInt(id));
 
     if (error) {
-      console.log(123);
       alert(error.message);
       return;
     }

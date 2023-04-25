@@ -137,7 +137,7 @@ function App() {
             <Route path='/new-post' element={<CreatePost session={session} />} />
             <Route path='/new-event' element={<CreateEvent session={session} />} />
             <Route path='/edit/:id' element={<EditPost data={filteredData} />} />
-            <Route path='/calendar' element={<CustomCalendar />} />
+            <Route path='/calendar' element={<CustomCalendar session={session} />} />
             <Route path='/games' element={<Games />} />
             <Route path='/chat' element={<RealTimeChat session={session} />} />
             <Route path='/account' element={<Account session={session} />} />

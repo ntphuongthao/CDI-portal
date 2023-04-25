@@ -1,6 +1,6 @@
 .event-container {
   width: 600px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .event-card {
@@ -60,6 +60,7 @@
   padding: 1rem;
   width: 400px;
   box-shadow: 0px 0px 7px 2px rgb(0 0 0 / 10%);
+  width: 350px;
 }
 
 .event-content-white {

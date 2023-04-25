@@ -116,9 +116,9 @@ const Card = (props) => {
         </div>
 
         <button className="expand-card">
-          <Link to={`/edit/${post.id}`} style={{color: "black"}}>
+          {props.currentUser.id === props.post.user_id && (<Link to={`/edit/${post.id}`} style={{color: "black"}}>
             <FiMoreHorizontal />
-          </Link>
+          </Link>)}
         </button>
       </div>
       <div className="content-box">
