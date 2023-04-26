@@ -1,0 +1,61 @@
+/* .depauw-title-banner {
+  background: #e1ad01;
+  background-image: url(https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/depauwtigers.com/responsive_2022/images/svgs/nav_pattern.svg);
+  color: white;
+} */
+
+.vertical-text {
+  color: transparent;
+  left: 30px;
+  padding-bottom: 34px;
+  position: absolute;
+  transform: rotate(90deg);
+  top: 10%;
+  transform-origin: left center;
+  white-space: nowrap;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #bac5c6;
+  z-index: 2;
+}
+
+.vertical-text-2 {
+  color: transparent;
+  right: -41%;
+  padding-bottom: 34px;
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 77%;
+  transform-origin: left center;
+  white-space: nowrap;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  z-index: 2;
+}
+
+.h1 {
+  font-family: Canela Deck Web;
+  font-size: 120px;
+  line-height: 1.05;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.2px;
+}
+
+.vertical-text.graphite {
+  -webkit-text-stroke-color: #464a4f;
+}
+
+.Typewriter {
+  margin: 2rem;
+}
+
+.Typewriter__wrapper {
+  font-size: 28px;
+}
+
+.depauw-links {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
