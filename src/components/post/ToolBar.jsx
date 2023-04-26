@@ -133,7 +133,7 @@ const ToolBar = (props) => {
                 return (
                   <div
                     className="flex"
-                    style={{color: 'black', justifyContent: 'flex-start'}}
+                    style={{color: 'black', justifyContent: 'flex-start', borderBottom: '1px solid #c6c6d0'}}
                     key={comment.id}
                   >
                     <b style={{width: '100px'}}><u>{username}:</u></b>
@@ -143,7 +143,8 @@ const ToolBar = (props) => {
             )}
           </div>
           <form onSubmit={handleSubmitComment} className="flex comment-writing">
-            <img
+            {props.avatar ? 
+            (<img
               src={props.avatar}
               alt="User Avatar"
               width='45px'
@@ -152,7 +153,12 @@ const ToolBar = (props) => {
                 borderRadius: '50%',
                 border: '2px solid black'
               }}
-            />
+            />)
+            :
+            (
+              <img src="./noprofile.png" alt="Default avatar" width={40} style={{borderRadius: '50%'}} />
+            )
+            }
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} style={{marginBottom: 0}}/>
             <button type="submit" className="sendCommentBtn"><FiSend/></button>
           </form>
