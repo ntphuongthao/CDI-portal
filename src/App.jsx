@@ -54,12 +54,12 @@ function App() {
 
       let { data, error } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`username, avatar_url`)
         .eq('id', user.id)
         .single();
 
       if (error) {
-        alert("Change your profile!");
+        alert("Update your profile with avatar and username!");
         return;
       } else if (data) {
         setUsername(data.username);
