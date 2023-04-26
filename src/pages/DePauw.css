@@ -1,8 +1,22 @@
-/* .depauw-title-banner {
-  background: #e1ad01;
+.landing-page {
+  background-image: url(./cdi.jpeg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.depauw-title-banner {
+  /* background: #e1ad01;
   background-image: url(https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/depauwtigers.com/responsive_2022/images/svgs/nav_pattern.svg);
-  color: white;
-} */
+  color: white; */
+  padding-top: 3rem;
+}
+
+
+.landing-wrapper {
+  height: 100vh;
+  backdrop-filter: blur(5px);
+}
 
 .vertical-text {
   color: transparent;
@@ -10,7 +24,7 @@
   padding-bottom: 34px;
   position: absolute;
   transform: rotate(90deg);
-  top: 10%;
+  top: 5%;
   transform-origin: left center;
   white-space: nowrap;
   -webkit-text-stroke-width: 1px;
@@ -34,10 +48,10 @@
 
 .h1 {
   font-family: Canela Deck Web;
-  font-size: 120px;
-  line-height: 1.05;
+  font-size: 130px;
+  line-height: 1.15;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -.2px;
 }
 
