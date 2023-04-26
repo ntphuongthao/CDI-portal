@@ -49,7 +49,7 @@ const Games = () => {
         <div className="game-introduction container">
             <h2>Trivia Game</h2>
             <img className='game-image' src="./trivia-game.jpeg" alt="Trivia Game" width="600px" />
-            <p>This fun and educational game is perfect for anyone who loves to travel or wants to expand their cultural knowledge</p>
+            <p>This fun and educational game is perfect for anyone who loves to travel or wants to expand their cultural knowledge.</p>
         </div>
 
         <div className={`game-container container ${!startTrivia ? "game-default-background" : ""}`}>
