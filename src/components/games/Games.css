@@ -68,3 +68,10 @@
   background-size: 140%;
   background-position: 50% 50%;
 }
+
+.game-default-background {
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/002/743/361/small/the-diverse-group-of-people-entrepreneurs-or-office-workers-isolated-on-white-background-multinational-company-old-and-young-men-and-women-standing-together-flat-cartoon-illustration-vector.jpg);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: bottom;
+}

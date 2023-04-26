@@ -27,7 +27,9 @@ const Games = () => {
           </p>
         </div>
 
-        <div className={`game-container container game-${selectedOption}`}>
+        <div className={
+          `game-container container game-${selectedOption} ${!selectedOption ? "game-default-background" : ""}`}
+        >
           <select className='select-create flashcard-select' style={{height: '42px'}} value={selectedOption} onChange={handleSelectOption}>
             <option value="">Select a language</option>
             <option value="vietnamese">Vietnamese</option>
@@ -50,7 +52,7 @@ const Games = () => {
             <p>This fun and educational game is perfect for anyone who loves to travel or wants to expand their cultural knowledge</p>
         </div>
 
-        <div className="game-container container">
+        <div className={`game-container container ${!startTrivia ? "game-default-background" : ""}`}>
           {!startTrivia && <button className="triviaBtn" style={{backgroundColor: "#e1ad01", color: "black"}} onClick={startTriviaGame}>Start</button>}
           {startTrivia && (
             <div className='container'>
