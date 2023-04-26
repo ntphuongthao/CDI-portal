@@ -16,12 +16,22 @@ npm run dev
 and open your [localhost](http://localhost:5173/) to see the application
 
 ## User Authentication
+Registration         |  Signing In
+:-------------------------:|:-------------------------:
+![dashboard](./public/readme/SignUp.png) |  ![events](./public/readme/SignIn.png)
+
 The CDI Portal provides a robust user authentication system that allows users to sign up for a new account or sign in with an existing one. This system ensures that only authorized users can access the portal's features and content.
 
 ## Posts and Events
+Dashboard           |  Events
+:-------------------------:|:-------------------------:
+![dashboard](./public/readme/dashboard.png) |  ![events](./public/readme/events.png)
+
+
 The Portal allows users to create and share posts and events with the entire school community. Users can add details such as content, date, and time to their events, and posts can be categorized by topic or subject.
 
 ## Chat with Alumni
+<img src="./public/readme/alumniChat.png" width=300><br>
 The Portal also provides a chat functionality that allows students to connect and engage with alumni of the school. This feature is a great way to build relationships and learn from those who have gone before.
 
 ## Games
