@@ -129,7 +129,7 @@ const SignUp = () => {
       <div className="container registration-form">
         {loading ? "Loading..." : (
           <>
-            <img className="school-logo" src="./school-logo.png" alt="School Logo" width="250px" />
+            <img className="school-logo" src="./school-logo.png" alt="School Logo" width="200px" />
             <h2>Registration Form</h2>
             {errors && (
               <>
@@ -155,7 +155,7 @@ const SignUp = () => {
               </div>
               <br />
               <div className="container">
-                <ul className="container">
+                <ul className="container" style={{fontSize: '12px'}}>
                   <div className="flex">
                     {hasLower ? <AiOutlineCheck style={{color: 'green'}}/> : <AiOutlineWarning style={{color: 'red'}}/>} 
                     <li>Lowercase characters</li>
@@ -174,7 +174,6 @@ const SignUp = () => {
                   </div>
                 </ul>
               </div>
-              <br /><br />
               <div className="flex">
                 <button className="signUpBtn" type="submit">Register</button>
               </div>
