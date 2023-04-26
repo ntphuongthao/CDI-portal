@@ -129,33 +129,29 @@ const ToolBar = (props) => {
               allComments.map((comment) => {
                 const username = comment.username;
                 const content = comment.content;
-                const avatar = comment.avatar_url; // This will be implemented later!
+                
                 return (
                   <div
                     className="flex"
                     style={{color: 'black',
                       gap: '8px',
                       justifyContent: 'flex-start',
-                      alignItems: 'normal',
+                      alignItems: 'center',
                       padding: '10px 20px'
                     }}
                     key={comment.id}
                   >
-                    {props.avatar ? 
-                      (<img
-                        src={props.avatar}
-                        alt="User Avatar"
-                        width='40px'
-                        height="40px"
-                        style={{
-                          borderRadius: '50%',
-                        }}
-                      />)
-                      :
-                      (
-                        <img src="./noprofile.png" alt="Default avatar" width={40} style={{borderRadius: '50%'}} />
-                      )
-                    }
+                    <img 
+                      src="./depauw-remove-background.png"
+                      alt="tiger avatar"
+                      width='50px'
+                      height='50px'
+                      style={{
+                        borderRadius: '50%',
+                        padding: '10px',
+                        background: 'white'
+                      }}
+                    />
                     <div className="flex comments-box-format">
                       <b><u style={{textDecoration: 'none'}}>{username}</u></b>
                       <div>{content}</div>
