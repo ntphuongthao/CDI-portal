@@ -33,3 +33,25 @@
 .triviaBtn:hover {
   border: 2px solid black;
 }
+
+.game-vietnamese {
+  background-image: url("https://media.istockphoto.com/id/498697166/vector/limestone-rocks-and-traditional-sailboat-in-sea-bay.jpg?s=612x612&w=0&k=20&c=LmdBS3Q5qEc_g2ZJAGcWBVJaxtsl8reNztnqUpqyrpY=");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.game-chinese {
+
+}
+
+.game-korean {
+
+}
+
+.game-japanese {
+
+}
+
+.game-bangladesh {
+  
+}

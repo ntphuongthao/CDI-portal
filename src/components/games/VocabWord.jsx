@@ -1,4 +1,3 @@
-import { useState } from "react";
 import './VocabWord.css';
 
 const VocabWord = ({ front, back, flipped, handleFlip  }) => {

@@ -15,9 +15,6 @@ const Games = () => {
     setStartTrivia(true);
   }
 
-  const restartTriviaGame = () => {
-
-  }
 
   return (
     <>
@@ -30,7 +27,7 @@ const Games = () => {
           </p>
         </div>
 
-        <div className="game-container container">
+        <div className={`game-container container game-${selectedOption}`}>
           <select className='select-create flashcard-select' style={{height: '42px'}} value={selectedOption} onChange={handleSelectOption}>
             <option value="">Select a language</option>
             <option value="vietnamese">Vietnamese</option>
