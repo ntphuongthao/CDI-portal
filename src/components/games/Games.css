@@ -35,13 +35,17 @@
 }
 
 .game-vietnamese {
-  background-image: url("https://media.istockphoto.com/id/498697166/vector/limestone-rocks-and-traditional-sailboat-in-sea-bay.jpg?s=612x612&w=0&k=20&c=LmdBS3Q5qEc_g2ZJAGcWBVJaxtsl8reNztnqUpqyrpY=");
+  background-image: url("https://img.freepik.com/premium-vector/beautiful-rice-field-landscape-illustration-valleys-up-down-blue-skies_142963-518.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 140%;
+  background-position: 50% 50%;
 }
 
 .game-chinese {
-
+  background-image: url("https://img.freepik.com/free-vector/watercolor-chinese-style-background_52683-96103.jpg");
+  background-repeat: no-repeat;
+  background-size: 140%;
+  background-position: 50% 50%;
 }
 
 .game-korean {
@@ -59,5 +63,12 @@
 }
 
 .game-bangladesh {
+<<<<<<< HEAD
 
+=======
+  background-image: url("https://pbs.twimg.com/media/EVRz3yIVAAAVK-F.png:large");
+  background-repeat: no-repeat;
+  background-size: 140%;
+  background-position: 50% 50%;
+>>>>>>> 741d3ce077dceccba387acdd82b826cffacc20c8
 }
