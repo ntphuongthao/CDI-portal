@@ -56,7 +56,7 @@ const Flashcard = ({ language }) => {
 
   return (
     <div className={`flashcard-container`}>
-      <h4>Check whether you are familiar with these commonly used {languageFormatted} words.</h4>
+      <h4 style={{background: 'white', padding: '5px'}}>Check whether you are familiar with these commonly used {languageFormatted} words.</h4>
       {card && <div className="container">
         <VocabWord
           front={card.translation}
