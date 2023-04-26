@@ -25,3 +25,31 @@
 .depauw-sign-in-logo {
   width: 600px;
 }
+
+.progress {
+  height: 4px;
+  background-color: grey;
+}
+
+.progress-bar-danger {
+  height: 4px;
+  width: 25%;
+  background-color: #e90f10;
+}
+
+.progress-bar-easy-warning{
+  height: 4px;
+  width: 50%;
+  background-color: #ffad00;
+}
+
+.progress-bar-hard-warning{
+  height: 4px;
+  width: 75%;
+  background-color: #ffad00;
+}
+
+.progress-bar-success{
+  height: 4px;
+  background-color: #02b502;
+}
