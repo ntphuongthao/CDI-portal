@@ -42,7 +42,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{minHeight: '730px'}}>
       <div className="container registration-form">
         {loading ? "Loading..." : (
           <>

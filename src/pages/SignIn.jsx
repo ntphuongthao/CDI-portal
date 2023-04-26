@@ -27,7 +27,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{minHeight: '730px'}}>
       <div className="sign-in-form">
         <div className="container sign-in-info">
           <h2>Log in with your account</h2>

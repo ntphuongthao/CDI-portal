@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: black;
+  color: white;
 }
 
 .calendar-container {
@@ -13,7 +15,6 @@
 
 .all-events-container {
   width: 50%;
-  border-left: 2px solid white;
   padding: 4rem;
   min-height: 1000px;
   justify-content: flex-start;

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html {
+  background: antiquewhite;
+  color: black;
+}
+
 :root {
   font-family: Raleway, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,6 +35,8 @@ a:hover {
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  background-color: antiquewhite;
+  color: black;
 }
 
 h1 {
@@ -51,7 +58,7 @@ button {
 }
 
 button:hover {
-  border-color: white;
+  border-color: black;
 }
 
 .sortedButtons button:hover {
