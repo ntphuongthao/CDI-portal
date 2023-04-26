@@ -133,11 +133,34 @@ const ToolBar = (props) => {
                 return (
                   <div
                     className="flex"
-                    style={{color: 'black', justifyContent: 'flex-start', borderBottom: '1px solid #c6c6d0'}}
+                    style={{color: 'black',
+                      gap: '8px',
+                      justifyContent: 'flex-start',
+                      alignItems: 'normal',
+                      padding: '10px 20px'
+                    }}
                     key={comment.id}
                   >
-                    <b style={{width: '100px'}}><u>{username}:</u></b>
-                    <div>{content}</div>
+                    {props.avatar ? 
+                      (<img
+                        src={props.avatar}
+                        alt="User Avatar"
+                        width='40px'
+                        height="40px"
+                        style={{
+                          borderRadius: '50%',
+                        }}
+                      />)
+                      :
+                      (
+                        <img src="./noprofile.png" alt="Default avatar" width={40} style={{borderRadius: '50%'}} />
+                      )
+                    }
+                    <div className="flex comments-box-format">
+                      <b><u style={{textDecoration: 'none'}}>{username}</u></b>
+                      <div>{content}</div>
+                    </div>
+                    
                   </div>
               )})
             )}
@@ -147,11 +170,10 @@ const ToolBar = (props) => {
             (<img
               src={props.avatar}
               alt="User Avatar"
-              width='45px'
-              height="45px"
+              width='50px'
+              height="50px"
               style={{
                 borderRadius: '50%',
-                border: '2px solid black'
               }}
             />)
             :

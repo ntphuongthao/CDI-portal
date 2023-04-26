@@ -27,7 +27,7 @@
 }
 
 .comments-box-content {
-  background-color: #E5E4E2;
+  background-color: #d1ccc1;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   overflow-y: scroll;
@@ -35,8 +35,18 @@
   max-height: 350px;
 }
 
+.comments-box-format {
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color:#ffffff;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
 .comment-writing {
-  width: 100%;;
+  width: 100%;
 }
 
 .sendCommentBtn {

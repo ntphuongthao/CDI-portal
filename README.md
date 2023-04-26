@@ -28,7 +28,7 @@ Dashboard           |  Events
 ![dashboard](./public/readme/dashboard.png) |  ![events](./public/readme/events.png)
 
 
-The Portal allows users to create and share posts and events with the entire school community. Users can add details such as content, date, and time to their events, and posts can be categorized by topic or subject.
+The Portal allows users to create and share posts and events with the entire school community. Users can add details such as content, date, and time to their events, and posts can be sorted by popularity or newest order.
 
 ## Chat with Alumni
 <img src="./public/readme/alumniChat.png" width=300><br>
