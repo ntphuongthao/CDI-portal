@@ -58,17 +58,13 @@
 .game-japanese {
   background-image: url("https://imgs.search.brave.com/i5-NK18zJ0pIxamrcZWVLWimpD_BLdgtZoh-_IphohI/rs:fit:1200:1192:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzZhLzQ5/L2U3LzZhNDllNzU0/OWM3ZDU4OTc0ZmNj/MDVjZmY0Y2IzMTU1/LmpwZw");
   background-repeat: no-repeat;
-  background-size: 130%;
+  background-size: 150%;
   background-position: 70%;
 }
 
 .game-bangladesh {
-<<<<<<< HEAD
-
-=======
   background-image: url("https://pbs.twimg.com/media/EVRz3yIVAAAVK-F.png:large");
   background-repeat: no-repeat;
   background-size: 140%;
   background-position: 50% 50%;
->>>>>>> 741d3ce077dceccba387acdd82b826cffacc20c8
 }
