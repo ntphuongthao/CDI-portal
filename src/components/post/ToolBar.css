@@ -30,8 +30,9 @@
   background-color: #E5E4E2;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
-  height: 200px;
   overflow-y: scroll;
+  min-height: 200px;
+  max-height: 350px;
 }
 
 .comment-writing {

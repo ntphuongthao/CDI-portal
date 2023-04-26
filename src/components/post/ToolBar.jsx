@@ -159,7 +159,7 @@ const ToolBar = (props) => {
               <img src="./noprofile.png" alt="Default avatar" width={40} style={{borderRadius: '50%'}} />
             )
             }
-            <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} style={{marginBottom: 0}}/>
+            <input type="text" placeholder="Comment..." value={comment} onChange={(e) => setComment(e.target.value)} style={{marginBottom: 0}}/>
             <button type="submit" className="sendCommentBtn"><FiSend/></button>
           </form>
         </div>
