@@ -21,15 +21,14 @@ const DePauw = () => {
                   loop: true,
                 }}
               />
-              <p style={{textAlign: 'center'}}>Feel free to share your 
+              <p style={{textAlign: 'center', fontSize: '30px'}}>Feel free to share your 
                 ideas and viewpoints here! We appreciate any input as it helps to enhance the diversity of DePauw.</p>
               <br />
-              <div className="container depauw-links">
+              <div className="container depauw-links" style={{fontSize: '24px'}}>
                 <b>If you don't have an account yet? <Link to='/sign-up'>Sign Up</Link></b>
                 <b>Otherwise, you can just <Link to='/sign-in'>Sign In</Link></b>
               </div>
             </div>
-            {/* <img src="./cdi.jpeg" alt="Center of diversity and inclusion" style={{margin: "2rem"}} /> */}
           </div>
         </div>
         <br />
