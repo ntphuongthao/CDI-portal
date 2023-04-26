@@ -35,6 +35,13 @@ The Portal allows users to create and share posts and events with the entire sch
 The Portal also provides a chat functionality that allows students to connect and engage with alumni of the school. This feature is a great way to build relationships and learn from those who have gone before.
 
 ## Games
+
+### Flashcard Game
+<img src='src/assets/flashcard.gif' title='Video Walkthrough' width='600px' alt='Video Walkthrough' /><br><br/>
+
+### Trivia Game
+<img src='src/assets/trivia.gif' title='Video Walkthrough' width='600px' alt='Video Walkthrough' /><br>
+
 The Portal 2 games designed to make the school experience more diverse and engaging. These games are fun and educational, and they provide a great way to relax and unwind after a long day of classes.
 
 ## Contributing
