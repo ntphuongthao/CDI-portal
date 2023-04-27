@@ -85,6 +85,6 @@
   position: absolute;
   background-color: black;
   bottom: 0px;
-  right: -5px;
+  right: -8px;
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
