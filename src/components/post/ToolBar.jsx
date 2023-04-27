@@ -105,13 +105,14 @@ const ToolBar = (props) => {
     const { data, error } = await supabase
     .from('Comments')
     .insert([
-      { content: comment, post_id: post.id, user_id: props.userId},
+      { content: comment, post_id: post.id, user_id: props.userId },
     ]);
 
     if (error) console.log(error);
     if (data) console.log(data);
 
     setComment("");
+    setAllComments((prev) => [...prev, { username: 'You', content: comment, post_id: post.id, user_id: props.userId}])
     // window.location = '/';
   }
 

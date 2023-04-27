@@ -3,7 +3,7 @@ import Card from "../components/post/Card";
 import './Home.css';
 
 const Home = (props) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [sortedBy, setSortedBy] = useState('newest');
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -23,7 +23,7 @@ const Home = (props) => {
 
   useEffect(() => {
     setData(props.data);
-    setFilteredData(props.data);
+    handleOrderNewest();
   }, [props]);
 
 
