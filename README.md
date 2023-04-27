@@ -1,6 +1,12 @@
 # CENTER FOR DIVERSITY AND INCLUSION PORTAL ([LIVE DEMO](https://cdi-portal.netlify.app/))
 
 **The Center For Diversity and Inclusion (CDI) Portal** is a web project that allows DePauw students, alumni, and faculty members to connect and engage with each other in a variety of ways. The portal provides features such as user authentication, post and event creation, chat functionality, and games to make the school experience more diverse.
+<br/>
+<br/>
+<br/>
+<img src='./public/readme/depauw-landing-page.png' title='Video Walkthrough' width='600px' alt='Video Walkthrough' /><br><br/>
+
+
 
 ## Getting Started & Installation
 
