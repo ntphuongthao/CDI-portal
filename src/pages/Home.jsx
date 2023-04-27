@@ -3,8 +3,8 @@ import Card from "../components/post/Card";
 import './Home.css';
 
 const Home = (props) => {
-  const [data, setData] = useState([]);
-  const [sortedBy, setSortedBy] = useState('newest');
+  const [data, setData] = useState(null);
+  const [sortedBy, setSortedBy] = useState('');
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const userId = props.session.user.id;
@@ -23,7 +23,7 @@ const Home = (props) => {
 
   useEffect(() => {
     setData(props.data);
-    handleOrderNewest();
+    setFilteredData(props.data);
   }, [props]);
 
 
@@ -88,7 +88,7 @@ const Home = (props) => {
             </button>
           </div>
         </div>
-        <p>{`Posts are currently sorted by ${sortedBy}!`}</p> 
+        <p>{sortedBy ? `Posts are currently sorted by ${sortedBy}!` : 'Posts are not sorted yet!'}</p> 
       </div>
 
       <h1 className="title">Dashboard</h1>
