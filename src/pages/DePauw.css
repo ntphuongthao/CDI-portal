@@ -1,5 +1,5 @@
 .landing-page {
-  background-image: url(./cdi.jpeg), url("https://www.depauw.edu/files/pages/1806_22_center_diversity_inclusion_004-3.jpg");
+  background-image: url("https://www.depauw.edu/files/pages/1806_22_center_diversity_inclusion_004-3.jpg"), url(./cdi.jpeg);
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
