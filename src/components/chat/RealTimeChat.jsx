@@ -114,7 +114,7 @@ function RealTimeChat({ session }) {
   };
 
   return (
-    <div className="flex addMarginTop">
+    <div className="flex chat-big-container">
       <div className="container chat-container">
         <div className="flex" style={{paddingTop: 0}}>
           <h1 style={{color: 'black'}}>Alumni Chat</h1>
