@@ -66,13 +66,13 @@ const Home = (props) => {
 
       <div className="container sortedButtons">
         <div className="flex">
-          <h3>Order by:</h3>
+          <h3>Sort by:</h3>
           <div className="sorting-flex">
             <button
               className={`sorted-new-Btn ${sortedBy === 'newest' ? 'highlightedBtn' : ''}`}
               onClick={handleOrderNewest}
             >
-              Time
+              Newest
             </button>
             <button
               className={`sorted-popular-Btn ${sortedBy === 'popularity' ? 'highlightedBtn' : ''}`}

@@ -93,7 +93,7 @@ function App() {
           {session && (
             <>
               <li><Link to='/'>Dashboard</Link></li> | 
-              <li><Link to='/users'> All Users</Link></li> |
+              <li><Link to='/users'> Campus</Link></li> |
               <li><Link to='/calendar'>Ongoing events</Link></li> | 
               <li><Link to='/games'>Games</Link></li> | 
               <li><Link to="/chat">Alumni chat</Link></li> 
