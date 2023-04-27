@@ -5,7 +5,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
 
 <br>
-**The Center For Diversity and Inclusion (CDI) Portal** is a web project that allows DePauw students, alumni, and faculty members to connect and engage with each other in a variety of ways. The portal provides features such as user authentication, post and event creation, chat functionality, and games to make the school experience more diverse.
+<b>The Center For Diversity and Inclusion (CDI) Portal</b> is a web project that allows DePauw students, alumni, and faculty members to connect and engage with each other in a variety of ways. The portal provides features such as user authentication, post and event creation, chat functionality, and games to make the school experience more diverse.
 <br/>
 <br/>
 <br/>
@@ -15,7 +15,7 @@
 
 ## Getting Started & Installation
 
-Install all the necessary packages and library of the project:
+Install all the necessary packages and library of the application:
 ```javascript
 npm install
 ```
@@ -65,6 +65,8 @@ We welcome pull requests for this project. However, if you plan on making major 
 
     Contributors: Quang Pham and Pushpita Saha.
     
-    All rights reserved. This project is open for contributions from anyone who wishes to improve it. We welcome bug reports, feature requests, and pull requests on our GitHub repository. 
-    By contributing to this project, you agree to release your contributions under the same license as the project. Thank you for helping to make this project better!
+    All rights reserved. This project is open for contributions from anyone who wishes to improve it.
+    We welcome bug reports, feature requests, and pull requests on our GitHub repository. 
+    By contributing to this project, you agree to release your contributions under the same license as 
+    the project. Thank you for helping to make this project better!
 
