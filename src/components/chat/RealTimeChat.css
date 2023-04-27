@@ -13,12 +13,13 @@
   background-color: rgba(255, 255, 255, 0.04);
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   border-radius: 30px;
   backdrop-filter: blur(12px);
   border: 2px solid rgba(255, 255, 255, 0.3);
   transition: transform 1s ease, width 1s ease;
+  width: 35%;
 }
 
 .chatbox {
@@ -29,7 +30,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 0;
-  height: 450px;
+  height: 550px;
   overflow-y: scroll;
 }
 
@@ -46,6 +47,8 @@
   margin-bottom: 10px;
   border-radius: 8px;
   position: relative;
+  width: 80%;
+  overflow-wrap: break-word;
 }
 
 .other-message::after {
@@ -71,6 +74,8 @@
   margin-bottom: 10px;
   border-radius: 8px;
   position: relative;
+  width: 80%;
+  overflow-wrap: break-word;
 }
 
 .current-user-message::after {
@@ -80,5 +85,6 @@
   position: absolute;
   background-color: black;
   bottom: 0px;
+  right: -5px;
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
