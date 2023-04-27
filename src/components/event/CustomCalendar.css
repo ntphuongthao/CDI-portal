@@ -1,11 +1,15 @@
 .calendar {
-  min-height: 1000px;
-  width: 600px;
+  min-height: auto;
+  /* width: 600px; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: black;
+  background-color: #242424;
   color: white;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 5px solid #000000;
+  margin: 50px;
 }
 
 .calendar-container {
