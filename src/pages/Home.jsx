@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home = (props) => {
   const [data, setData] = useState(null);
-  const [sortedBy, setSortedBy] = useState('');
+  const [sortedBy, setSortedBy] = useState('newest');
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const userId = props.session.user.id;
@@ -43,6 +43,12 @@ const Home = (props) => {
     setFilteredData(postsSorted);
   }
 
+  const handleMyPosts = () => {
+    const postsSorted = data.filter((post) => post.user_id === userId);
+    setSortedBy("my-posts");
+    setFilteredData(postsSorted);
+  }
+
   return (
     <div className="container addMarginTop">
       <form className='flex search-bar'>
@@ -61,10 +67,28 @@ const Home = (props) => {
       <div className="container sortedButtons">
         <div className="flex">
           <h3>Order by:</h3>
-          <button className={sortedBy === 'newest' ? 'highlightedBtn' : ''} onClick={handleOrderNewest}>Newest</button>
-          <button className={sortedBy === 'popularity' ? 'highlightedBtn' : ''} onClick={handleOrderPopular}>Most Popular</button>
+          <div className="sorting-flex">
+            <button
+              className={`sorted-new-Btn ${sortedBy === 'newest' ? 'highlightedBtn' : ''}`}
+              onClick={handleOrderNewest}
+            >
+              Time
+            </button>
+            <button
+              className={`sorted-popular-Btn ${sortedBy === 'popularity' ? 'highlightedBtn' : ''}`}
+              onClick={handleOrderPopular}
+            >
+              Popularity
+            </button>
+            <button
+              className={`sorted-posts-Btn ${sortedBy === 'my-posts' ? 'highlightedBtn' : ''}`}
+              onClick={handleMyPosts}
+            >
+              My Posts
+            </button>
+          </div>
         </div>
-        <p>{!sortedBy ? "Posts are currently not sorted by any order!": `Posts are currently sorted by ${sortedBy}!`}</p> 
+        <p>{`Posts are currently sorted by ${sortedBy}!`}</p> 
       </div>
 
       <h1 className="title">Dashboard</h1>

@@ -2,7 +2,31 @@
   margin-bottom: 1rem;
 }
 
+.sorted-new-Btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sorted-popular-Btn {
+  border-radius: 0;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.sorted-posts-Btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.sorted-new-Btn:hover, .sorted-popular-Btn:hover, .sorted-posts-Btn:hover {
+  border: 2px solid white;
+}
+
 .highlightedBtn {
-  background-color: #e1ad01;
+  background-color: white;
   color: black;
+}
+
+.sorting-flex {
+
 }
