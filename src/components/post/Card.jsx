@@ -110,7 +110,7 @@ const Card = (props) => {
             <p><b>{username}</b></p>
           </div>
           <div style={{marginLeft: '1rem'}}>
-            <h3>{post.title}</h3>
+            <h3 style={{padding: '5px', background: 'white'}}>{post.title}</h3>
             <p className="card-date">{new Date(post.created_at).toString().substring(0, 24)}</p>
           </div>
         </div>
