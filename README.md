@@ -43,7 +43,7 @@ The Portal allows users to create and share posts and events with the entire sch
 Users can add details such as content, date, and time to their events. Events can be sorted in past and future. Posts can be sorted by popularity or newest order.
 
 ## Chat with Alumni
-<img src="./public/readme/alumniChat.png" width=300><br>
+<img src="./public/readme/alumniChat.png" width='600px'><br>
 The Portal also provides a chat functionality that allows students to connect and engage with alumni and other students of the DePauw. This feature is a great way to build relationships, expand networking and learn from those who have gone before.
 
 ## Games
