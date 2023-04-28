@@ -74,10 +74,10 @@ const SignUp = () => {
     return strength;
   }
 
-  function filterEmail(email) {
-    const isDepauwEmail = email.indexOf('@depauw.edu') !== -1;
-    return isDepauwEmail;
-  }
+  // function filterEmail(email) {
+  //   const isDepauwEmail = email.indexOf('@depauw.edu') !== -1;
+  //   return isDepauwEmail;
+  // }
   
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -97,10 +97,10 @@ const SignUp = () => {
       return;
     }
 
-    if (!filterEmail(user.email)) {
-      setErrors("You must use DePauw email to register!");
-      return;
-    }
+    // if (!filterEmail(user.email)) {
+    //   setErrors("You must use DePauw email to register!");
+    //   return;
+    // }
 
     if (passwordStrength < 3) {
       setErrors("Please use a stronger password!");
