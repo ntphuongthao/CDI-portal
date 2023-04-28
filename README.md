@@ -9,7 +9,7 @@
 <br/>
 <br/>
 <br/>
-<img src='./public/readme/depauw-landing-page.png' title='Video Walkthrough' width='600px' alt='Video Walkthrough' /><br><br/>
+<img src='./public/readme/depauw-landing-page.png' title='Landing Page' width='600px' alt='Landing Page' /><br><br/>
 
 
 
@@ -31,19 +31,20 @@ Registration         |  Signing In
 :-------------------------:|:-------------------------:
 ![dashboard](./public/readme/SignUp.png) |  ![events](./public/readme/SignIn.png)
 
-The CDI Portal provides a robust user authentication system that allows users to sign up for a new account or sign in with an existing one. This system ensures that only authorized users can access the portal's features and content.
+The CDI Portal provides a robust user authentication system that only allows DePauw students to sign up for a new account or sign in with an existing one. This system ensures that only authorized users can access the portal's features and content. Make sure your password is strong enough!
 
 ## Posts and Events
-Dashboard           |  Events
+Dashboard           |  Past/ Ongoing Events
 :-------------------------:|:-------------------------:
 ![dashboard](./public/readme/dashboard.png) |  ![events](./public/readme/events.png)
 
 
-The Portal allows users to create and share posts and events with the entire school community. Users can add details such as content, date, and time to their events, and posts can be sorted by popularity or newest order.
+The Portal allows users to create and share posts and events with the entire school community. 
+Users can add details such as content, date, and time to their events. Events can be sorted in past and future. Posts can be sorted by popularity or newest order.
 
 ## Chat with Alumni
 <img src="./public/readme/alumniChat.png" width=300><br>
-The Portal also provides a chat functionality that allows students to connect and engage with alumni of the school. This feature is a great way to build relationships and learn from those who have gone before.
+The Portal also provides a chat functionality that allows students to connect and engage with alumni and other students of the DePauw. This feature is a great way to build relationships, expand networking and learn from those who have gone before.
 
 ## Games
 
@@ -53,7 +54,7 @@ The Portal also provides a chat functionality that allows students to connect an
 ### Trivia Game
 <img src='src/assets/trivia.gif' title='Video Walkthrough' width='600px' alt='Video Walkthrough' /><br>
 
-The Portal 2 games designed to make the school experience more diverse and engaging. These games are fun and educational, and they provide a great way to relax and unwind after a long day of classes.
+The Portal two games are designed to make the school experience more diverse and engaging. These games are fun and educational, and they provide a great way to relax and unwind after a long day of classes.
 
 ## Contributing
 
