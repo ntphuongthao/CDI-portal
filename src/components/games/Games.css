@@ -16,9 +16,48 @@
 
 .game-introduction {
   width: 50%;
-  border-right: 2px solid #e1ad01;
   padding: 1.5rem;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.game-intro-title {
+  position: relative;
+  font-size: 60px;
+  font-family: 'Voltaire', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: center;
+  background: #e1ad01;
+  color: black;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  width: 7em;
+  margin: 1rem auto;
+  margin-bottom: 3rem;
+  text-shadow:-1px 1px white, -2px 2px white, -3px 3px 3px white, -4px 4px white, -5px 5px white, -6px 6px 3px white;
+}
+
+span.game-intro-line-two {
+  text-shadow: 1px -1px #e1ad01, 2px -2px #e1ad01, 3px -3px 3px #e1ad01, 4px -4px #e1ad01, 6px -6px #e1ad01, 6px -6px 3px #e1ad01;
+  background: black;
+  color: white;
+  display: block;
+  position: absolute;
+  width: 230px;
+  left: 22%;
+  top: 90%;
+}
+
+.game-description {
+  position: absolute;
+  background: white;
+  padding: 8px;
+  text-align: center;
+  width: 600px;
+  bottom: 7%;
 }
 
 .game-container {
@@ -28,6 +67,8 @@
   min-height: 600px;
   margin: 0 1.5rem 36px 1.5rem;
   padding: 1rem;
+  border: 3px solid black;
+  border-radius: 1rem;
 }
 
 .triviaBtn:hover {
