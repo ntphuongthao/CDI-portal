@@ -11,6 +11,8 @@ const SignUp = () => {
   const [hasLower, setHasLower] = useState(false);
   const [hasSpecialChar, setHasSpecialChar] = useState(false);
   const [hasNumber, setHasNumber] = useState(false);
+  const [secondPasswordCheck, setSecondPasswordCheck] = useState(false);
+  const [reenteredPassword, setReenteredPassword] = useState("");
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [user, setUser] = useState({
     password: "",
@@ -100,6 +102,16 @@ const SignUp = () => {
       return;
     }
 
+    if (passwordStrength < 3) {
+      setErrors("Please use a stronger password!");
+      return;
+    }
+
+    if (!secondPasswordCheck) {
+      setErrors("Please re-enter the same password!");
+      return;
+    }
+
     try {
       setLoading(true);
       const { error } = await supabase.auth.signUp({
@@ -122,6 +134,12 @@ const SignUp = () => {
       setPasswordStrength(strength);
     }
     setUser({...user, [name]: value});
+  }
+
+  const handleReEnteredPassword = (e) => {
+    setReenteredPassword(e.target.value);
+    if (e.target.value === user.password) setSecondPasswordCheck(true);
+    else setSecondPasswordCheck(false);
   }
 
   return (
@@ -149,6 +167,10 @@ const SignUp = () => {
                 <RiLockPasswordLine size={30} />
                 <input placeholder="Password" type="password" name="password" value={user.password} onChange={handleChange} />
               </div>
+              <div className="flex">
+                <RiLockPasswordLine size={30} />
+                <input placeholder="Re-Enter Your Password" type="password" value={reenteredPassword} onChange={handleReEnteredPassword} />
+              </div>
               <div className="progress">
                 <div className={`progress-bar-${passwordClass()}`}>
                 </div>
@@ -171,6 +193,10 @@ const SignUp = () => {
                   <div className="flex">
                     {hasSpecialChar ? <AiOutlineCheck style={{color: 'green'}}/> : <AiOutlineWarning style={{color: 'red'}}/>} 
                     <li>Has special characters in password</li>
+                  </div>
+                  <div className="flex">
+                    {secondPasswordCheck ? <AiOutlineCheck style={{color: 'green'}}/> : <AiOutlineWarning style={{color: 'red'}}/>} 
+                    <li>Re-entered password is matching</li>
                   </div>
                 </ul>
               </div>
