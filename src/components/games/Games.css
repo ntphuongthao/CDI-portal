@@ -40,6 +40,17 @@
   text-shadow:-1px 1px white, -2px 2px white, -3px 3px 3px white, -4px 4px white, -5px 5px white, -6px 6px 3px white;
 }
 
+.game-language {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: bounce 3s infinite; /* referring directly to the animation's @keyframe declaration */
+  position: absolute;
+  font-size: 15px;
+  rotate: 40deg;
+  top: -30%;
+  right: -12%;
+}
+
 span.game-intro-line-two {
   text-shadow: 1px -1px #e1ad01, 2px -2px #e1ad01, 3px -3px 3px #e1ad01, 4px -4px #e1ad01, 6px -6px #e1ad01, 6px -6px 3px #e1ad01;
   background: black;

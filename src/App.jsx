@@ -17,6 +17,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiOutlineUser } from 'react-icons/ai';
 import Users from './pages/Users';
+import 'animate.css';
 
 function App() {
   const [data, setData] = useState([]);

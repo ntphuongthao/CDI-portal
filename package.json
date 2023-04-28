@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.20.0",
+    "animate.css": "^4.1.1",
     "react": "^18.2.0",
     "react-calendar": "^4.2.1",
     "react-canvas-confetti": "^1.4.0",

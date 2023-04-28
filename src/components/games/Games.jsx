@@ -21,7 +21,9 @@ const Games = () => {
       <div className="flex" style={{justifyContent: 'space-between', padding: '3rem'}}>
         <div className="game-introduction container">
           <h2 className='game-intro-title'>
-            Flashcard<span class="game-intro-line-two">Game</span>
+            Flashcard
+            <span className='game-language animate__animated animate__jello'>Languages</span>
+            <span class="game-intro-line-two">Game</span>
           </h2>
           <img className='game-image' src="./vocabulary-flashcard.jpeg" alt="Vocabulary Flashcard" width="600px"/>
           <p className='game-description'>Test your familiarity with frequently utilized vocabulary from various countries such 
@@ -49,7 +51,11 @@ const Games = () => {
 
       <div className='flex' style={{justifyContent: 'space-between'}}>
         <div className="game-introduction container">
-            <h2 className='game-intro-title'>Trivia<span class="game-intro-line-two">Game</span></h2>
+            <h2 className='game-intro-title'>
+              Trivia
+              <span className='game-language animate__animated animate__jello'>Cuisine & flag</span>
+              <span className="game-intro-line-two">Game</span>
+            </h2>
             <img className='game-image' src="./trivia-game.jpeg" alt="Trivia Game" width="600px" />
             <p className='game-description'>This fun and educational game is perfect for anyone who loves to travel or wants to expand their cultural knowledge</p>
         </div>
