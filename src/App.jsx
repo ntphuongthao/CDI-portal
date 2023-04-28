@@ -88,7 +88,8 @@ function App() {
       <nav className='flex' style={{justifyContent: "space-between", padding: "0"}}>
         <div className='flex' style={{color: "#e1ad01"}}>
           <Link to='/'>
-            <img src="depauw-logo.jpeg" alt="depauw logo" width="60px" height="50px" className='depauw-logo'/>
+            <img src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/depauwtigers.com/responsive_2022/images/svgs/nav_main.svg"
+             alt="depauw logo" width="60px" height="50px" className='depauw-logo'/>
           </Link>
           {session && (
             <>
